@@ -1,0 +1,5 @@
+Direct-Reaction Baseline (Same-Pathway Constrained)
+Hits@20: 0.9787 ± 0.0000
+  Seed 42: 0.9787
+  Seed 123: 0.9787
+  Seed 456: 0.9787

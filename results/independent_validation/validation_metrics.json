@@ -1,0 +1,136 @@
+{
+  "IJMS2024": {
+    "enrichment": {
+      "phenylpropanoid": {
+        "observed": 5.0,
+        "expected": 15.0,
+        "enrichment_score": 0.3333333333333333,
+        "pvalue": 0.9997469768521207,
+        "FDR": 1.0
+      },
+      "flavonoid": {
+        "observed": 0.0,
+        "expected": 15.0,
+        "enrichment_score": 0.0,
+        "pvalue": 1.0,
+        "FDR": 1.0
+      },
+      "amino_acid": {
+        "observed": 10.0,
+        "expected": 15.0,
+        "enrichment_score": 0.6666666666666666,
+        "pvalue": 0.9535701975757084,
+        "FDR": 1.0
+      }
+    },
+    "rank_concordance": {
+      "spearman_rho": 0.5,
+      "pvalue": 0.6666666666666667
+    },
+    "direction_agnostic": {
+      "phenylpropanoid": {
+        "active": 1.0,
+        "n_significant": 3.0,
+        "mean_abs_logFC": 2.2080859099449914
+      },
+      "flavonoid": {
+        "active": false,
+        "n_significant": 0
+      },
+      "amino_acid": {
+        "active": 1.0,
+        "n_significant": 9.0,
+        "mean_abs_logFC": 1.5304080842989127
+      }
+    }
+  },
+  "MCP2018": {
+    "enrichment": {
+      "phenylpropanoid": {
+        "observed": 0.0,
+        "expected": 8.0,
+        "enrichment_score": 0.0,
+        "pvalue": 1.0,
+        "FDR": 1.0
+      },
+      "flavonoid": {
+        "observed": 12.0,
+        "expected": 8.0,
+        "enrichment_score": 1.5,
+        "pvalue": 0.09141356299478538,
+        "FDR": 0.27424068898435616
+      },
+      "amino_acid": {
+        "observed": 5.0,
+        "expected": 8.0,
+        "enrichment_score": 0.625,
+        "pvalue": 0.920811229314702,
+        "FDR": 1.0
+      }
+    },
+    "rank_concordance": {
+      "spearman_rho": 0.5,
+      "pvalue": 0.6666666666666667
+    },
+    "direction_agnostic": {
+      "phenylpropanoid": {
+        "active": false,
+        "n_significant": 0
+      },
+      "flavonoid": {
+        "active": 1.0,
+        "n_significant": 10.0,
+        "mean_abs_logFC": 1.3652028479428628
+      },
+      "amino_acid": {
+        "active": 1.0,
+        "n_significant": 4.0,
+        "mean_abs_logFC": 2.755366516652619
+      }
+    }
+  },
+  "SciRep2020": {
+    "enrichment": {
+      "phenylpropanoid": {
+        "observed": 0.0,
+        "expected": 10.0,
+        "enrichment_score": 0.0,
+        "pvalue": 1.0,
+        "FDR": 1.0
+      },
+      "flavonoid": {
+        "observed": 0.0,
+        "expected": 10.0,
+        "enrichment_score": 0.0,
+        "pvalue": 1.0,
+        "FDR": 1.0
+      },
+      "amino_acid": {
+        "observed": 6.0,
+        "expected": 10.0,
+        "enrichment_score": 0.6,
+        "pvalue": 0.9511925623863674,
+        "FDR": 1.0
+      }
+    },
+    "rank_concordance": {
+      "spearman_rho": NaN,
+      "pvalue": NaN
+    },
+    "direction_agnostic": {
+      "phenylpropanoid": {
+        "active": false,
+        "n_significant": 0
+      },
+      "flavonoid": {
+        "active": false,
+        "n_significant": 0
+      },
+      "amino_acid": {
+        "active": 1.0,
+        "n_significant": 4.0,
+        "mean_abs_logFC": 2.019607701049974
+      }
+    }
+  }
+}

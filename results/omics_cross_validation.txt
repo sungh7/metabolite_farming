@@ -1,0 +1,18 @@
+Sig Metabolites: 14
+Sig Proteins: 547
+
+Target Enzyme Overlap (Phenylpropanoid/Isoflavonoid):
+(['Isoflavone'], 'Glyma.01G211800.1.p;Glyma.01G211800.2.p', 6.385814585796148, 'Isoflavone reductase.')
+(['Chalcone'], 'Glyma.01G228700.1.p;Glyma.11G011500.2.p;Glyma.01G091400.1.p;Glyma.02G130400.1.p;Glyma.09G075200.1.p;Glyma.19G105100.1.p;Glyma.09G074900.1.p', 2.889122579893775, 'Uncharacterized protein; Belongs to the thiolase-like superfamily. Chalcone/stilbene synthases family.')
+(['CHI'], 'Glyma.02G042500.2.p;Glyma.02G042500.3.p;Glyma.02G042500.1.p', 3.727534545865444, 'Chitinase class I.')
+(['CHI'], 'Glyma.14G196700.1.p;Glyma.02G229800.1.p;Glyma.17G115400.1.p;Glyma.13G167800.1.p', 1.5445250088957712, 'Ribonucloprotein; Common component of the spliceosome and rRNA processing machinery; Belongs to the eukaryotic ribosomal protein eL8 family.')
+(['Chalcone'], 'Glyma.06G118500.1.p', -2.133825175912613, 'Uncharacterized protein; Belongs to the thiolase-like superfamily. Chalcone/stilbene synthases family.')
+(['Isoflavone'], 'Glyma.13G173500.1.p;Glyma.07G202300.1.p;Glyma.13G173400.1.p', 3.223130176252291, 'Isoflavone synthase 1; Belongs to the cytochrome P450 family.')
+(['Chalcone'], 'Glyma.10G292200.1.p', 5.076454842584746, 'Chalcone-flavonone isomerase family protein; Belongs to the chalcone isomerase family.')
+(['Isoflavone'], 'Glyma.11G070500.1.p;Glyma.11G070500.2.p;Glyma.20G027800.1.p', 3.895490365242676, 'Isoflavone reductase.')
+(['Isoflavone'], 'Glyma.11G070600.1.p', 3.5786287859309134, 'Isoflavone reductase.')
+(['Isoflavone'], 'Glyma.13G056100.1.p', 1.944862990914992, "Malonyl-CoA:isoflavone 7-O-glucoside-6''-O-malonyltransferase.")
+(['Chalcone'], 'Glyma.13G262500.1.p', -1.388553569058804, 'Chalcone-flavonone isomerase family protein; Belongs to the chalcone isomerase family.')
+(['CHI'], 'Glyma.13G346700.1.p', 3.3388926925671503, 'Chitin-binding type-1 domain-containing protein.')
+(['Chalcone'], 'Glyma.15G242900.1.p;Glyma.15G242900.2.p', -1.0162792789264046, 'Chalcone-flavonone isomerase family protein; Belongs to the chalcone isomerase family.')
+(['CHI'], 'Glyma.16G119200.1.p', 1.4274514046921971, 'Chitin-binding type-1 domain-containing protein.')

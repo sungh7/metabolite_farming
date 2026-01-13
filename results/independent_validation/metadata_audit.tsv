@@ -1,0 +1,4 @@
+Dataset_ID	Study_Name	Species	Tissue	Condition	Treatment	Time_Points	Replicates	Platform	Data_Type	Accession_IDs	Available_Files	Reference	Notes
+IJMS2024	Soybean Salt Multi-Omics	Glycine max	Root + Leaf	Salt Stress	150mM NaCl	0h, 6h, 24h, 72h	n=3	LC-MS/MS (Metabolomics), TMT (Proteomics)	Metabolomics, Proteomics, Transcriptomics	MTBLS10210, PXD052320, PRJNA1110806	Raw + Processed	IJMS 2024	Main validation dataset; Independent condition (salt vs ethylene)
+MCP2018	GmMYB173 Salt Stress Phosphoproteomics	Glycine max	Root	Salt Stress + GmMYB173 OE	150mM NaCl	0h, 6h, 12h	n=3	LC-MS/MS	Phosphoproteomics, Metabolomics	-	Supplement Tables	MCP 2018	⚠️ Isoflavone DOWN in root; Use as "module rewiring" evidence only
+SciRep2020	Arabidopsis ACC Root Metabolome	Arabidopsis thaliana	Root	ACC (Ethylene Precursor)	10μM ACC	0h, 6h, 24h, 48h	n=4	GC-MS	Metabolomics	-	Supplement	Sci Rep 2020	Cross-species; Core module conservation (NOT isoflavone specific)

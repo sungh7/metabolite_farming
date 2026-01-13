@@ -1,0 +1,6 @@
+Enzyme,Metabolite,Enzyme_Log2FC,Metabolite_Log2FC,Metabolite_Pvalue,Coherent
+Isoflavone synthase (IFS1),Daidzein,3.22,0.1416806220771888,7.386144355121556e-07,True
+Chalcone isomerase (CHI),Daidzein,5.08,0.1416806220771888,7.386144355121556e-07,True
+Chalcone synthase (CHS),Daidzein,2.89,0.1416806220771888,7.386144355121556e-07,True
+Phenylalanine ammonia-lyase (PAL),Daidzein,3.72,0.1416806220771888,7.386144355121556e-07,True
+Isoflavone reductase (IFR),Formononetin,6.39,0.1348167928759245,3.796591093522639e-08,True

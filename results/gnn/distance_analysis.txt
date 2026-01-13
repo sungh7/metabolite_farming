@@ -1,0 +1,5 @@
+Distance-based Performance Analysis
+========================================
+Distance 3: Hits@20 = 0.2500 (n=8)
+Distance 4: Hits@20 = 0.0625 (n=16)
+Distance ≥5: Hits@20 = 0.2000 (n=20)

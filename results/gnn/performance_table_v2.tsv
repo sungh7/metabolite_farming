@@ -1,0 +1,8 @@
+modelscope ConditionEvidenceHits@20Std95% CINotes
+RANDOM=Hard NegN/A0.71%--Baseline
+HeteroSAGERandom NegNon-Textmining4.55%--Topology (Sum)
+MLPRandom NegNon-Textmining11.36%--Features Only
+handle_completion_insecurities Random NegNon-Textmining15.91%--Meta-path Attention
+HGTRandom NegNon-Textmining28.57%--Previous Best
+HGTHard Neg + MSINon-Textmining15.03%3.87%[8.81, 21.30]Robust Evaluation (n=15)
+Direct-ReactionHard NegReaction DB97.87%0.00%-Upper Bound (uses ground truth)

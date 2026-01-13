@@ -1,0 +1,26 @@
+original_kegg,name,issue_type,n_pathways,kegg_search_matches,matched_ids
+C08320,(E)-3-Hexadecenoic acid,has_pathway_no_reaction,1,0,
+C10435,"(Z)-4',6-Dihydroxyaurone 6-glucoside",no_pathway,0,0,
+C01177,1-(10Z-Heptadecenoyl)-sn-glycero-3-phospho-(1'-myo-inositol),has_pathway_no_reaction,4,0,
+C06037,"1,2-Di-(9Z,12Z,15Z-octadecatrienoyl)-3-(Galactosyl-alpha-1-6-Galactosyl-beta-1)-glycerol",has_pathway_no_reaction,2,0,
+C14765,13-OxoODE,has_pathway_no_reaction,1,0,
+C10373,5-O-Methylembelin,no_pathway,0,1,C10373
+C10643,Arborinine,no_pathway,0,1,C10643
+C08468,Auxin a,no_pathway,0,1,C08468
+C02495,Daidzein,in_reaction,2,0,
+C10216,Daidzin,has_pathway_no_reaction,3,0,
+C00503,DL-Phenylalanine,has_pathway_no_reaction,1,0,
+C04079,D-Pantothenoyl-L-cysteine,has_pathway_no_reaction,1,0,
+C00858,Formononetin,in_reaction,4,0,
+C11365,Irinotecan,no_pathway,0,2,C11365;C16641
+C00062,L-Arginine,in_reaction,21,0,
+C00078,L-Tryptophan,has_pathway_no_reaction,25,0,
+C03005,Methyl N-methylanthranilate,has_pathway_no_reaction,3,0,
+C00384,Neomycin,no_pathway,0,11,C00384;C00832;C01441
+C19670,Oleamide,no_pathway,0,1,C19670
+C10514,Phaseollin,no_pathway,0,2,C10514;C10515
+C08833,Pollinastanol,no_pathway,0,1,C08833
+C10178,Robinin,no_pathway,0,1,C10178
+C17875,Sedanonic acid,no_pathway,0,1,C17875
+C19865,Soyasaponin III,no_pathway,0,1,C19865
+C01004,Trigonelline,has_pathway_no_reaction,1,0,

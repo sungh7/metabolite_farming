@@ -1,0 +1,5 @@
+source,module,hits_in_top20,module_size,pvalue,neg_log10_p
+Ethylene,Isoflavonoid,0,3,1.0,-0.0
+Ethylene,Amino_acid,1,2,0.1904522613065327,0.7202138664416342
+Random,Isoflavonoid,0,3,1.0,-0.0
+Random,Amino_acid,1,2,0.1904522613065327,0.7202138664416342

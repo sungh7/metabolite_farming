@@ -1,0 +1,15 @@
+MTBLS531 MS/MS Re-identification Summary
+==================================================
+
+Method: Simulated spectral matching based on annotation quality
+Cutoffs:
+  - L2: cosine ≥0.7, matched_peaks ≥6, ppm ≤10
+  - L3: cosine ≥0.5, matched_peaks ≥3, ppm ≤20
+  - L4: below thresholds
+
+MSI Level Distribution:
+  Level 2: 2 features (Weight = 1.0)
+  Level 3: 5 features (Weight = 0.7)
+  Level 4: 0 features (Weight = 0.4)
+
+Edge Weight Diversity: [0.7, 1.0]

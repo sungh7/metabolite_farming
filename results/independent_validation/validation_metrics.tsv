@@ -1,0 +1,10 @@
+Dataset	Module	Enrichment_Score	Enrichment_FDR	Active	N_Significant
+IJMS2024	phenylpropanoid	0.3333333333333333	1.0	True	3
+IJMS2024	flavonoid	0.0	1.0	False	0
+IJMS2024	amino_acid	0.6666666666666666	1.0	True	9
+MCP2018	phenylpropanoid	0.0	1.0	False	0
+MCP2018	flavonoid	1.5	0.27424068898435616	True	10
+MCP2018	amino_acid	0.625	1.0	True	4
+SciRep2020	phenylpropanoid	0.0	1.0	False	0
+SciRep2020	flavonoid	0.0	1.0	False	0
+SciRep2020	amino_acid	0.6	1.0	True	4

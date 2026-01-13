@@ -1,0 +1,322 @@
+[
+  {
+    "prediction": {
+      "enzyme": 2615,
+      "metabolite": 6,
+      "score": 0.876054048538208
+    },
+    "top_edges": [
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1141,
+        "shapley_value": 0.09037762681643167
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1142,
+        "shapley_value": -0.015186802546183268
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 148,
+        "shapley_value": -0.012024680773417154
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 147,
+        "shapley_value": -0.009838936726252238
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 148,
+        "shapley_value": -0.008471651871999105
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 7,
+        "shapley_value": -0.0069082677364349365
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 206,
+        "shapley_value": -0.006084740161895752
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 1141,
+        "shapley_value": -0.0060841123263041174
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 52,
+        "shapley_value": 0.0035678048928578696
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 22,
+        "shapley_value": -0.0034461736679077147
+      }
+    ],
+    "fidelity": {
+      "original": 0.876054048538208,
+      "after_removal": 0.8765650987625122,
+      "fidelity": -0.0005110502243041992
+    }
+  },
+  {
+    "prediction": {
+      "enzyme": 1161,
+      "metabolite": 23,
+      "score": 0.8407561779022217
+    },
+    "top_edges": [
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 509,
+        "shapley_value": 0.09026980002721151
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 49,
+        "shapley_value": -0.06723505059878031
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 23,
+        "shapley_value": -0.022817341486612956
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 12,
+        "shapley_value": -0.005511013666788737
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 118,
+        "shapley_value": 0.0016685545444488526
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 509,
+        "shapley_value": 0.0010715762774149576
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 188,
+        "shapley_value": 0.000628507137298584
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 23,
+        "shapley_value": 0.0006277104218800863
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 118,
+        "shapley_value": 0.000604325532913208
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 121,
+        "shapley_value": 0.0003918329874674479
+      }
+    ],
+    "fidelity": {
+      "original": 0.8407561779022217,
+      "after_removal": 0.838445246219635,
+      "fidelity": 0.00231093168258667
+    }
+  },
+  {
+    "prediction": {
+      "enzyme": 2615,
+      "metabolite": 20,
+      "score": 0.8303934335708618
+    },
+    "top_edges": [
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1141,
+        "shapley_value": 0.2134223779042562
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 52,
+        "shapley_value": -0.02294814387957255
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 1142,
+        "shapley_value": -0.02278775771458944
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 40,
+        "shapley_value": -0.017836451530456543
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1142,
+        "shapley_value": -0.016560171047846475
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 156,
+        "shapley_value": -0.015330570936203002
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 64,
+        "shapley_value": -0.01529869834582011
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 193,
+        "shapley_value": -0.015256144603093465
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1140,
+        "shapley_value": -0.0104454239209493
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 52,
+        "shapley_value": -0.007781827449798584
+      }
+    ],
+    "fidelity": {
+      "original": 0.8303934335708618,
+      "after_removal": 0.9195010662078857,
+      "fidelity": -0.08910763263702393
+    }
+  },
+  {
+    "prediction": {
+      "enzyme": 2615,
+      "metabolite": 29,
+      "score": 0.8282004594802856
+    },
+    "top_edges": [
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1141,
+        "shapley_value": -0.061349324385325116
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1140,
+        "shapley_value": 0.04101495345433553
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 157,
+        "shapley_value": -0.008090595404307047
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 1140,
+        "shapley_value": 0.006704562902450561
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 156,
+        "shapley_value": 0.006031201283137003
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 206,
+        "shapley_value": 0.005861220757166544
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 157,
+        "shapley_value": 0.0040732622146606445
+      },
+      {
+        "edge_type": "('Protein', 'interacts', 'Enzyme')",
+        "edge_idx": 33,
+        "shapley_value": 0.00405621329943339
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 52,
+        "shapley_value": 0.004043505589167277
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1142,
+        "shapley_value": -0.0035263737042744952
+      }
+    ],
+    "fidelity": {
+      "original": 0.8282004594802856,
+      "after_removal": 0.8321313261985779,
+      "fidelity": -0.003930866718292236
+    }
+  },
+  {
+    "prediction": {
+      "enzyme": 2615,
+      "metabolite": 27,
+      "score": 0.8264336585998535
+    },
+    "top_edges": [
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1141,
+        "shapley_value": 0.1525823692480723
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 1142,
+        "shapley_value": -0.026988953351974487
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 1140,
+        "shapley_value": -0.01527777910232544
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 44,
+        "shapley_value": -0.010454005002975464
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 1142,
+        "shapley_value": -0.010297820965449015
+      },
+      {
+        "edge_type": "('Protein', 'interacts', 'Enzyme')",
+        "edge_idx": 33,
+        "shapley_value": -0.010183825095494588
+      },
+      {
+        "edge_type": "('Protein', 'interacts', 'Enzyme')",
+        "edge_idx": 108,
+        "shapley_value": -0.010183721780776978
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 51,
+        "shapley_value": -0.010164684057235718
+      },
+      {
+        "edge_type": "('Enzyme', 'catalyzes', 'Metabolite')",
+        "edge_idx": 193,
+        "shapley_value": -0.009995607535044353
+      },
+      {
+        "edge_type": "('Metabolite', 'rev_catalyzes', 'Enzyme')",
+        "edge_idx": 202,
+        "shapley_value": 0.007346137364705404
+      }
+    ],
+    "fidelity": {
+      "original": 0.8264336585998535,
+      "after_removal": 0.9364857077598572,
+      "fidelity": -0.11005204916000366
+    }
+  }
+]

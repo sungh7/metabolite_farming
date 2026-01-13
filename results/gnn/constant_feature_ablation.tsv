@@ -1,0 +1,4 @@
+Mode	Hits20_Mean	Hits20_Std	MRR_Mean	MRR_Std
+learnable	0.1503	0.0387	0.0335	0.0087
+constant	0.1882	0.0776	0.0350	0.0134
+shuffled	0.1569	0.0582	0.0370	0.0136

@@ -1,0 +1,7 @@
+Model	Graph_Type	Evidence	Hits@20	MAP
+Random	N/A	N/A	0.71	N/A
+MLP	Strict	Features Only	11.36	1.39
+HeteroSAGE	Strict	Topology (Sum)	4.55	0.87
+HAN	Strict	Topology (Meta-path)	15.91	1.56
+HGT	Strict	Topology (Rel-Attention)	28.57	3.28
+HGT	Full	All (incl. Text-Mining)	22.45	2.68

@@ -1,0 +1,2 @@
+Hits@20_Random: 0.71
+Hits@20_NetworkProximity: 0.00

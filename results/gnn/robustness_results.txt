@@ -1,0 +1,20 @@
+Robustness Evaluation (5-Fold CV × 3 Seeds = 15 Runs)
+Hits@20: 0.1503 ± 0.0387
+95% CI: [0.0881, 0.2130]
+
+Individual runs:
+  Run 1: 0.2000
+  Run 2: 0.1000
+  Run 3: 0.1600
+  Run 4: 0.1224
+  Run 5: 0.1429
+  Run 6: 0.1020
+  Run 7: 0.1600
+  Run 8: 0.1800
+  Run 9: 0.2200
+  Run 10: 0.1600
+  Run 11: 0.1400
+  Run 12: 0.2000
+  Run 13: 0.0816
+  Run 14: 0.1224
+  Run 15: 0.1633

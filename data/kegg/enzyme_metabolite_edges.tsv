@@ -1,0 +1,6 @@
+enzyme_ec	metabolite_id	reaction_id	is_substrate	is_product
+1.14.13.39	C00062	R00557	True	False
+1.14.14.88	C00858	R03006	True	False
+1.14.14.89	C00858	R06560	True	False
+1.14.14.90	C00858	R06560	True	False
+1.14.14.90	C02495	R06606	False	True

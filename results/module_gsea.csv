@@ -1,0 +1,6 @@
+Module,NES,Fisher_p,Perm_p,N_hits,FDR
+Amino acid metabolism,2.0882948947282562,5.23462657795886e-08,0.019,2,0.05499999999999999
+Isoflavonoid biosynthesis,1.9900290323794045,1.6306412736807822e-10,0.022,3,0.05499999999999999
+Phenylpropanoid biosynthesis,0.0,0.0,1.0,0,1.0
+Flavonoid biosynthesis,0.0,0.0,1.0,0,1.0
+Terpenoid biosynthesis,0.0,0.0,1.0,0,1.0

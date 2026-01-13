@@ -1,0 +1,52 @@
+Rank	TF_ID	TF_Name	Enzyme_ID	Enzyme_Name	Enzyme_Ann	Score
+--------------------------------------------------------------------------------
+1	3847.A0A0K2CTP6	NAC4	3847.A0A0R0E568	A0A0R0E568	Fe2OG dioxygenase domain-containing protein; Belongs to the iron/ascorbate-dependent oxidoreductase family.	1.0000
+2	3847.A0A0K2CTP6	NAC4	3847.A0A0R0E6U1	A0A0R0E6U1	Protein kinase domain-containing protein.	1.0000
+3	3847.A0A0K2CTP6	NAC4	3847.A0A0R0E7Y9	A0A0R0E7Y9	Protein kinase domain-containing protein.	1.0000
+4	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EAS2	A0A0R0EAS2	UDPGT domain-containing protein; Belongs to the UDP-glycosyltransferase family.	1.0000
+5	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EBB0	OAS-TL2	Cysteine synthase; Belongs to the cysteine synthase/cystathionine beta- synthase family.	1.0000
+6	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EBJ8	A0A0R0EBJ8	PfkB domain-containing protein; Belongs to the carbohydrate kinase PfkB family.	1.0000
+7	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EDH2	A0A0R0EDH2	Dihydrolipoamide acetyltransferase component of pyruvate dehydrogenase complex.	1.0000
+8	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EDM9	A0A0R0EDM9	Glutamine amidotransferase type-1 domain-containing protein.	1.0000
+9	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EG78	A0A0R0EG78	GPI mannosyltransferase 2; Mannosyltransferase involved in glycosylphosphatidylinositol- anchor biosynthesis.	1.0000
+10	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EGD1	A0A0R0EGD1	Glycosyltransferase.	1.0000
+11	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EIZ0	A0A0R0EIZ0	Uncharacterized protein; Belongs to the short-chain dehydrogenases/reductases (SDR) family.	1.0000
+12	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EJ12	A0A0R0EJ12	NTP_transferase domain-containing protein.	1.0000
+13	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EJ26	A0A0R0EJ26	Protein kinase domain-containing protein.	1.0000
+14	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EJ50	A0A0R0EJ50	Protein kinase domain-containing protein.	1.0000
+15	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EL79	A0A0R0EL79	Pyruvate carboxyltransferase domain-containing protein; Belongs to the alpha-IPM synthase/homocitrate synthase family.	1.0000
+16	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EL96	A0A0R0EL96	Glutamyl-tRNA(Gln) amidotransferase subunit C, chloroplastic/mitochondrial; Allows the formation of correctly charged Gln-tRNA(Gln) through the transamidation of misacylated Glu-tRNA(Gln) in chloroplasts and mitochondria. The reaction takes place in the presence of glutamine and ATP through an activated gamma-phospho-Glu-tRNA(Gln). Belongs to the GatC family.	1.0000
+17	3847.A0A0K2CTP6	NAC4	3847.A0A0R0ELE0	P5CR	Pyrroline-5-carboxylate reductase; Belongs to the pyrroline-5-carboxylate reductase family.	1.0000
+18	3847.A0A0K2CTP6	NAC4	3847.A0A0R0ELT1	A0A0R0ELT1	Protein kinase domain-containing protein.	1.0000
+19	3847.A0A0K2CTP6	NAC4	3847.A0A0R0ELX3	A0A0R0ELX3	Guanylate kinase-like domain-containing protein.	1.0000
+20	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EM53	A0A0R0EM53	Pyruvate carboxyltransferase domain-containing protein; Belongs to the alpha-IPM synthase/homocitrate synthase family.	1.0000
+21	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EN86	A0A0R0EN86	Hexosyltransferase; Belongs to the glycosyltransferase 8 family.	1.0000
+22	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EQ27	A0A0R0EQ27	Glutamine amidotransferase type-1 domain-containing protein.	1.0000
+23	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EQG6	A0A0R0EQG6	Pyruvate kinase; Belongs to the pyruvate kinase family.	1.0000
+24	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EQY1	A0A0R0EQY1	Protein kinase domain-containing protein.	1.0000
+25	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EU68	A0A0R0EU68	Uncharacterized protein; Belongs to the short-chain dehydrogenases/reductases (SDR) family.	1.0000
+26	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EVL3	P5CS	Delta-1-pyrroline-5-carboxylate synthase; P5CS plays a key role in proline biosynthesis, leading to osmoregulation in plants; In the N-terminal section; belongs to the glutamate 5- kinase family.	1.0000
+27	3847.A0A0K2CTP6	NAC4	3847.A0A0R0EXX1	A0A0R0EXX1	Pyruvate kinase; Belongs to the pyruvate kinase family.	1.0000
+28	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F1N7	ACCA-1	CoA carboxyltransferase C-terminal domain-containing protein.	1.0000
+29	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F1Q2	A0A0R0F1Q2	Protein kinase domain-containing protein.	1.0000
+30	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F2E2	A0A0R0F2E2	Fe2OG dioxygenase domain-containing protein; Belongs to the iron/ascorbate-dependent oxidoreductase family.	1.0000
+31	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F2G6	A0A0R0F2G6	Uncharacterized protein; Belongs to the class-III pyridoxal-phosphate-dependent aminotransferase family.	1.0000
+32	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F382	A0A0R0F382	Methyltransferase.	1.0000
+33	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F392	OAS-TL3	Cysteine synthase; Belongs to the cysteine synthase/cystathionine beta- synthase family.	1.0000
+34	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F3G4	A0A0R0F3G4	Protein kinase domain-containing protein.	1.0000
+35	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F4R7	A0A0R0F4R7	Protein kinase domain-containing protein.	1.0000
+36	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F581	A0A0R0F581	Protein kinase domain-containing protein.	1.0000
+37	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F5Q2	A0A0R0F5Q2	3-oxoacyl-[acyl-carrier-protein] reductase; Belongs to the short-chain dehydrogenases/reductases (SDR) family.	1.0000
+38	3847.A0A0K2CTP6	NAC4	3847.A0A0R0F9I6	GATA	Glutamyl-tRNA(Gln) amidotransferase subunit A, chloroplastic/mitochondrial; Allows the formation of correctly charged Gln-tRNA(Gln) through the transamidation of misacylated Glu-tRNA(Gln) in chloroplasts and mitochondria. The reaction takes place in the presence of glutamine and ATP through an activated gamma-phospho-Glu-tRNA(Gln).	1.0000
+39	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FAU9	A0A0R0FAU9	Fe2OG dioxygenase domain-containing protein; Belongs to the iron/ascorbate-dependent oxidoreductase family.	1.0000
+40	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FCP5	A0A0R0FCP5	Fe2OG dioxygenase domain-containing protein; Belongs to the iron/ascorbate-dependent oxidoreductase family.	1.0000
+41	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FDC9	A0A0R0FDC9	Fe2OG dioxygenase domain-containing protein; Belongs to the iron/ascorbate-dependent oxidoreductase family.	1.0000
+42	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FDG4	A0A0R0FDG4	Pkinase_Tyr domain-containing protein.	1.0000
+43	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FE45	A0A0R0FE45	Pyruvate carboxyltransferase domain-containing protein.	1.0000
+44	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FGB5	A0A0R0FGB5	Hexosyltransferase; Belongs to the glycosyltransferase 31 family.	1.0000
+45	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FGJ1	A0A0R0FGJ1	Protein kinase domain-containing protein.	1.0000
+46	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FGZ5	A0A0R0FGZ5	Protein kinase domain-containing protein.	1.0000
+47	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FI80	A0A0R0FI80	Cellulose synthase; Belongs to the glycosyltransferase 2 family. Plant cellulose synthase subfamily.	1.0000
+48	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FK72	A0A0R0FK72	Protein kinase domain-containing protein.	1.0000
+49	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FM79	A0A0R0FM79	Protein kinase domain-containing protein.	1.0000
+50	3847.A0A0K2CTP6	NAC4	3847.A0A0R0FMD1	A0A0R0FMD1	Casein kinase II subunit beta; Plays a complex role in regulating the basal catalytic activity of the alpha subunit; Belongs to the casein kinase 2 subunit beta family.	1.0000

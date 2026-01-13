@@ -1,0 +1,4 @@
+Mode	Hits20_Mean	Hits20_Std	MRR_Mean	MRR_Std
+learnable	0.1490	0.0372	0.0335	0.0087
+frozen	0.1503	0.0387	0.0335	0.0087
+attribute	0.1355	0.0424	0.0350	0.0112

@@ -1,0 +1,7 @@
+Protein Name,Gene ID,Log2 Fold Change,Significance,Pathway Role
+Isoflavone Synthase 1 (IFS1),Glyma.13G173500,3.22,P<0.05,Key Step: Phenylalanine -> Isoflavone
+Isoflavone Reductase (IFR),Glyma.01G211800,6.39,P<0.05,Downstream Defense (Phytoalexin)
+Chalcone Isomerase (CHI),Glyma.10G292200,5.08,P<0.05,General Flavonoid Backbone
+Chalcone Synthase (CHS),Glyma.01G228700,2.89,P<0.05,Entry Step (Polyketide Synthase)
+Phenylalanine Ammonia-Lyase (PAL),Glyma.02G042500,3.72,P<0.05,Phenylpropanoid Entry
+4-Coumarate-CoA Ligase (4CL),Glyma.11G070500,3.89,P<0.05,Lignin/Flavonoid Precursor

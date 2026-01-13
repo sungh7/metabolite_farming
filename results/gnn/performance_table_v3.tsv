@@ -1,0 +1,13 @@
+modelscope ConditionEvidenceHits@20Hits20_StdMRRMRR_StdNotes
+RANDOM=wget-log N/A0.71%---Baseline
+Adamic-AdarHeteroTopology14.89%-0.1043-Heuristic
+Resource-AllocationHeteroTopology14.89%-0.1043-Heuristic
+HeteroSAGEStrictTopology4.55%---Sum aggregation
+MLPStrictFeatures11.36%---No graph
+handle_completion_insecurities StrictMeta-path15.91%---Manual paths
+HGT (Random Neg)StrictNon-Textmining28.57%---Easy negatives
+HGT (Hard Neg)StrictHard Neg + MSI15.03%3.87%0.03350.0087n=15 robust
+HGT (Frozen)StrictFrozen Emb15.03%3.87%0.03350.0087Structure learning confirmed
+HGT (Attribute)StrictGO/EC Features13.55%4.24%0.03500.0112Attribute-based
+HGT (Inductive)StrictCold-Start20.77%9.43%0.03920.0193Node holdout
+Direct-ReactionSame-PathwayReaction DB97.87%0.00%--Oracle upper bound

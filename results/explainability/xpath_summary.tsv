@@ -1,0 +1,6 @@
+Rank	Enzyme_Idx	Metabolite_Idx	Score	Top_Path	Importance
+1	1814	6	0.9783	Enzyme[1814] -> Metabolite[36] -> Metabolite[6]	1.5365
+2	1814	8	0.9663	Enzyme[1814] -> Metabolite[36] -> Metabolite[8]	1.6294
+3	1814	36	0.9654	Enzyme[1814] -> Metabolite[36] -> Metabolite[36]	1.2091
+4	1814	41	0.9609	Enzyme[1814] -> Metabolite[36] -> Metabolite[41]	1.5359
+5	1814	27	0.9463	Enzyme[1814] -> Metabolite[36] -> Metabolite[27]	0.9866

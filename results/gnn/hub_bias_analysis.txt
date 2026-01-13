@@ -1,0 +1,17 @@
+Hub Bias Analysis for Novel Edge Ranking
+==================================================
+
+Top-50 Enzyme distribution: 18 unique / 50 total
+Top-50 TF distribution: 8 unique / 50 total
+
+Most frequent Enzyme: Enzyme_1712
+  - Occurrences in Top-50: 8
+  - Degree: 8
+  - Degree Percentile: 88.4%
+
+Most frequent TF: TF_1212
+  - Occurrences in Top-50: 18
+  - Degree: 2
+  - Degree Percentile: 94.3%
+
+Interpretation: moderate_degree

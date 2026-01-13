@@ -1,0 +1,38 @@
+# Large data files (available from public databases)
+data/experimental/proteomics/
+data/experimental/proteomics.zip
+data/raw/*.gz
+data/raw/*.txt
+
+# Raw mass spectrometry files (available from MetaboLights MTBLS531)
+studies/
+*.wiff
+*.wiff.scan
+
+# PyTorch graph files
+*.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+wget-log
+
+# Claude Code
+.claude/

@@ -1,0 +1,6 @@
+TF_family,motif,description,target_with_motif,target_total,bg_with_motif,bg_total,target_mean_count,bg_mean_count,fold_enrichment,pvalue,odds_ratio,FDR
+ERF/AP2,GCCGCC,GCC-box - ERF family binding,5,5,4,8,3.2,0.75,2.0,0.0979020979020979,inf,0.4895104895104895
+EIN3/EIL,AYGWAYCT,EIN3 binding element,1,5,2,8,0.2,0.375,0.8,0.8041958041958043,0.75,1.0
+WRKY,TTGACY,W-box - WRKY binding,1,5,4,8,0.2,0.5,0.4,0.9564879564879565,0.25,1.0
+MYB,CNGTTR,MYB recognition element,2,5,7,8,1.2,1.75,0.4571428571428572,0.993006993006993,0.09523809523809523,1.0
+NAC,CACGTG,NAC binding core,5,5,8,8,4.0,2.75,1.0,1.0,,1.0
