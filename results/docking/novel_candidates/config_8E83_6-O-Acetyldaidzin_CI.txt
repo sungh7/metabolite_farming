@@ -1,0 +1,23 @@
+# AutoDock Vina Configuration
+# Receptor: 2HIS_MedicagoTruncatula
+# Ligand: 6-O-Acetyldaidzin_CID14034712
+# Novelty: ★★★
+# Rationale: Acetylated conjugate - never studied computationally
+
+receptor = /data/ethylene/data/structures/pdb/8E83.pdb
+ligand = /data/ethylene/data/structures/ligands/6-O-Acetyldaidzin_CID14034712.sdf
+
+center_x = 14.75
+center_y = 0.62
+center_z = 36.45
+
+size_x = 40
+size_y = 40
+size_z = 40
+
+exhaustiveness = 32
+num_modes = 20
+energy_range = 3
+
+out = /data/ethylene/results/docking/novel_candidates/docked_8E83_6-O-Acetyldaidzin_CI.pdbqt
+log = /data/ethylene/results/docking/novel_candidates/log_8E83_6-O-Acetyldaidzin_CI.txt

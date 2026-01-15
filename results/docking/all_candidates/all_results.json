@@ -1,0 +1,44 @@
+[
+  {
+    "receptor": "8E83",
+    "ligand": "6-O-Acetyldaidzin_CID14034712",
+    "novelty": "\u2605\u2605\u2605",
+    "affinity": -8.863
+  },
+  {
+    "receptor": "8E83",
+    "ligand": "6-O-Malonyldaidzin_CID5318574",
+    "novelty": "\u2605\u2605\u2605",
+    "affinity": -7.6
+  },
+  {
+    "receptor": "8E83",
+    "ligand": "6-O-Acetylgenistin_CID5320413",
+    "novelty": "\u2605\u2605\u2605",
+    "affinity": -7.768
+  },
+  {
+    "receptor": "1EYQ",
+    "ligand": "Liquiritigenin_CID114829",
+    "novelty": "\u2605\u2605",
+    "affinity": -5.296
+  },
+  {
+    "receptor": "1EYQ",
+    "ligand": "Daidzein_CID5281708",
+    "novelty": "\u2605\u2605",
+    "affinity": -4.902
+  },
+  {
+    "receptor": "8EA1",
+    "ligand": "Daidzin_CID107971",
+    "novelty": "\u2605\u2605",
+    "affinity": -7.357
+  },
+  {
+    "receptor": "8EA1",
+    "ligand": "Genistin_CID5281377",
+    "novelty": "\u2605\u2605",
+    "affinity": -6.863
+  }
+]

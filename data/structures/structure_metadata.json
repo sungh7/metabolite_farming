@@ -1,0 +1,116 @@
+{
+  "pdb_structures": {
+    "1EYQ": {
+      "name": "CHI_MedicagoSativa_Naringenin",
+      "description": "Chalcone isomerase with naringenin (1.85 \u00c5)",
+      "organism": "Medicago sativa",
+      "ligand": "Naringenin"
+    },
+    "8E83": {
+      "name": "2HIS_MedicagoTruncatula",
+      "description": "2-Hydroxyisoflavanone synthase (IFS homolog, 2.0 \u00c5)",
+      "organism": "Medicago truncatula",
+      "ligand": null
+    },
+    "8EA1": {
+      "name": "2HID_PuerariaLobata",
+      "description": "2-Hydroxyisoflavanone dehydratase (2.4 \u00c5)",
+      "organism": "Pueraria lobata",
+      "ligand": "p-nitrophenol"
+    }
+  },
+  "alphafold_models": {
+    "GmIFR": [
+      "I1LHU6",
+      "Q9SDZ1"
+    ],
+    "GmIFS": [
+      "Q9FRV8"
+    ],
+    "GmCHS": [
+      "P24826"
+    ],
+    "GmCHI": [
+      "O24520"
+    ]
+  },
+  "ligands": {
+    "6-O-Malonyldaidzin": {
+      "cid": 5318574,
+      "chebi": "CHEBI:80371",
+      "kegg": null,
+      "novelty": "\u2605\u2605\u2605 NOVEL - No MD simulation reported"
+    },
+    "6-O-Malonylgenistin": {
+      "cid": 5318568,
+      "chebi": "CHEBI:80372",
+      "kegg": null,
+      "novelty": "\u2605\u2605\u2605 NOVEL - No MD simulation reported"
+    },
+    "6-O-Acetyldaidzin": {
+      "cid": 14034712,
+      "chebi": "CHEBI:133395",
+      "kegg": null,
+      "novelty": "\u2605\u2605\u2605 NOVEL - No MD simulation reported"
+    },
+    "6-O-Acetylgenistin": {
+      "cid": 5320413,
+      "chebi": null,
+      "kegg": null,
+      "novelty": "\u2605\u2605\u2605 NOVEL - No MD simulation reported"
+    },
+    "Daidzein": {
+      "cid": 5281708,
+      "chebi": "CHEBI:28197",
+      "kegg": "C10208",
+      "novelty": "\u2605 Known - binding to IFS studied"
+    },
+    "Genistein": {
+      "cid": 5280961,
+      "chebi": "CHEBI:74224",
+      "kegg": "C06563",
+      "novelty": "\u2605 Known - binding to IFS studied"
+    },
+    "Daidzin": {
+      "cid": 107971,
+      "chebi": "CHEBI:4307",
+      "kegg": "C00159",
+      "novelty": "\u2605\u2605 Km reported, binding mode unknown"
+    },
+    "Genistin": {
+      "cid": 5281377,
+      "chebi": "CHEBI:28159",
+      "kegg": "C09126",
+      "novelty": "\u2605\u2605 Km reported, binding mode unknown"
+    },
+    "Naringenin": {
+      "cid": 932,
+      "chebi": "CHEBI:17846",
+      "kegg": "C00509",
+      "novelty": "\u2605 Known - CHI crystal structure"
+    },
+    "Liquiritigenin": {
+      "cid": 114829,
+      "chebi": "CHEBI:28159",
+      "kegg": "C09762",
+      "novelty": "\u2605\u2605 IFS substrate"
+    }
+  },
+  "novel_candidates": [
+    {
+      "ligand": "6-O-Malonylgenistin",
+      "enzyme": "GmIMaT3",
+      "rationale": "Product of malonylation reaction, binding mode unknown"
+    },
+    {
+      "ligand": "6-O-Acetyldaidzin",
+      "enzyme": "GmIMaT1",
+      "rationale": "Acetylated conjugate, never studied computationally"
+    },
+    {
+      "ligand": "Daidzin",
+      "enzyme": "GmIMaT1",
+      "rationale": "Substrate with known Km (36.28 \u03bcM), binding mode unknown"
+    }
+  ]
+}

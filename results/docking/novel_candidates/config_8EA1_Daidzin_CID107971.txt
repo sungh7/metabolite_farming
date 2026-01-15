@@ -1,0 +1,23 @@
+# AutoDock Vina Configuration
+# Receptor: 2HID_PuerariaLobata
+# Ligand: Daidzin_CID107971
+# Novelty: ★★
+# Rationale: Glycosylated isoflavone - dehydratase substrate analog
+
+receptor = /data/ethylene/data/structures/pdb/8EA1.pdb
+ligand = /data/ethylene/data/structures/ligands/Daidzin_CID107971.sdf
+
+center_x = 34.45
+center_y = 14.83
+center_z = -0.53
+
+size_x = 35
+size_y = 35
+size_z = 35
+
+exhaustiveness = 32
+num_modes = 20
+energy_range = 3
+
+out = /data/ethylene/results/docking/novel_candidates/docked_8EA1_Daidzin_CID107971.pdbqt
+log = /data/ethylene/results/docking/novel_candidates/log_8EA1_Daidzin_CID107971.txt

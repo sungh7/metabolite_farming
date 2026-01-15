@@ -1,0 +1,12 @@
+receptor = /data/ethylene/results/docking/all_candidates/8E83_6-O-Acetylgenistin_CID532/receptor.pdbqt
+ligand = /data/ethylene/results/docking/all_candidates/8E83_6-O-Acetylgenistin_CID532/ligand.pdbqt
+center_x = 14.71
+center_y = 0.83
+center_z = 35.94
+size_x = 35
+size_y = 35
+size_z = 35
+exhaustiveness = 16
+num_modes = 5
+energy_range = 3
+out = /data/ethylene/results/docking/all_candidates/8E83_6-O-Acetylgenistin_CID532/docked.pdbqt

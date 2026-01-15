@@ -1,0 +1,23 @@
+# AutoDock Vina Configuration
+# Receptor: CHI_MedicagoSativa
+# Ligand: Daidzein_CID5281708
+# Novelty: ★★
+# Rationale: Product comparison - reverse binding
+
+receptor = /data/ethylene/data/structures/pdb/1EYQ.pdb
+ligand = /data/ethylene/data/structures/ligands/Daidzein_CID5281708.sdf
+
+center_x = 12.50
+center_y = 4.00
+center_z = -7.50
+
+size_x = 25
+size_y = 25
+size_z = 25
+
+exhaustiveness = 32
+num_modes = 20
+energy_range = 3
+
+out = /data/ethylene/results/docking/novel_candidates/docked_1EYQ_Daidzein_CID5281708.pdbqt
+log = /data/ethylene/results/docking/novel_candidates/log_1EYQ_Daidzein_CID5281708.txt

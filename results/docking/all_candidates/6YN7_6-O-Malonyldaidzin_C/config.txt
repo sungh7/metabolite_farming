@@ -1,0 +1,12 @@
+receptor = /data/ethylene/results/docking/all_candidates/6YN7_6-O-Malonyldaidzin_C/receptor.pdbqt
+ligand = /data/ethylene/results/docking/all_candidates/6YN7_6-O-Malonyldaidzin_C/ligand.pdbqt
+center_x = 19.02
+center_y = 0.17
+center_z = 39.50
+size_x = 35
+size_y = 35
+size_z = 35
+exhaustiveness = 16
+num_modes = 5
+energy_range = 3
+out = /data/ethylene/results/docking/all_candidates/6YN7_6-O-Malonyldaidzin_C/docked.pdbqt

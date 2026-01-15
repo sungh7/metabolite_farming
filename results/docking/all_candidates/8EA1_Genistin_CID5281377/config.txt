@@ -1,0 +1,12 @@
+receptor = /data/ethylene/results/docking/all_candidates/8EA1_Genistin_CID5281377/receptor.pdbqt
+ligand = /data/ethylene/results/docking/all_candidates/8EA1_Genistin_CID5281377/ligand.pdbqt
+center_x = 34.27
+center_y = 14.88
+center_z = -0.35
+size_x = 35
+size_y = 35
+size_z = 35
+exhaustiveness = 16
+num_modes = 5
+energy_range = 3
+out = /data/ethylene/results/docking/all_candidates/8EA1_Genistin_CID5281377/docked.pdbqt

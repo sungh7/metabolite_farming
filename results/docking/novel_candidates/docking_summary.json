@@ -1,0 +1,114 @@
+{
+  "docking_pairs": [
+    {
+      "receptor": "8E83",
+      "receptor_name": "2HIS_MedicagoTruncatula",
+      "ligand": "6-O-Malonylgenistin_CID5318568",
+      "rationale": "IFS product analog - malonylated form never docked",
+      "novelty": "\u2605\u2605\u2605",
+      "grid_center": null,
+      "grid_size": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "receptor": "8E83",
+      "receptor_name": "2HIS_MedicagoTruncatula",
+      "ligand": "6-O-Acetyldaidzin_CID14034712",
+      "rationale": "Acetylated conjugate - never studied computationally",
+      "novelty": "\u2605\u2605\u2605",
+      "grid_center": null,
+      "grid_size": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "receptor": "8E83",
+      "receptor_name": "2HIS_MedicagoTruncatula",
+      "ligand": "6-O-Malonyldaidzin_CID5318574",
+      "rationale": "Major isoflavone form in soybean - binding unknown",
+      "novelty": "\u2605\u2605\u2605",
+      "grid_center": null,
+      "grid_size": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "receptor": "1EYQ",
+      "receptor_name": "CHI_MedicagoSativa",
+      "ligand": "Liquiritigenin_CID114829",
+      "rationale": "5-deoxy flavanone substrate comparison",
+      "novelty": "\u2605\u2605",
+      "grid_center": [
+        12.5,
+        4.0,
+        -7.5
+      ],
+      "grid_size": [
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "receptor": "1EYQ",
+      "receptor_name": "CHI_MedicagoSativa",
+      "ligand": "Daidzein_CID5281708",
+      "rationale": "Product comparison - reverse binding",
+      "novelty": "\u2605\u2605",
+      "grid_center": [
+        12.5,
+        4.0,
+        -7.5
+      ],
+      "grid_size": [
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "receptor": "8EA1",
+      "receptor_name": "2HID_PuerariaLobata",
+      "ligand": "Daidzin_CID107971",
+      "rationale": "Glycosylated isoflavone - dehydratase substrate analog",
+      "novelty": "\u2605\u2605",
+      "grid_center": null,
+      "grid_size": [
+        35,
+        35,
+        35
+      ]
+    },
+    {
+      "receptor": "8EA1",
+      "receptor_name": "2HID_PuerariaLobata",
+      "ligand": "Genistin_CID5281377",
+      "rationale": "Alternative glycoside substrate",
+      "novelty": "\u2605\u2605",
+      "grid_center": null,
+      "grid_size": [
+        35,
+        35,
+        35
+      ]
+    }
+  ],
+  "config_files": [
+    "/data/ethylene/results/docking/novel_candidates/config_8E83_6-O-Malonylgenistin_.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_8E83_6-O-Acetyldaidzin_CI.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_8E83_6-O-Malonyldaidzin_C.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_1EYQ_Liquiritigenin_CID11.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_1EYQ_Daidzein_CID5281708.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_8EA1_Daidzin_CID107971.txt",
+    "/data/ethylene/results/docking/novel_candidates/config_8EA1_Genistin_CID5281377.txt"
+  ],
+  "vina_installed": true,
+  "output_directory": "/data/ethylene/results/docking/novel_candidates"
+}

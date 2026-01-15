@@ -1,0 +1,12 @@
+receptor = /data/ethylene/results/docking/all_candidates/1EYQ_Liquiritigenin_CID114829/receptor.pdbqt
+ligand = /data/ethylene/results/docking/all_candidates/1EYQ_Liquiritigenin_CID114829/ligand.pdbqt
+center_x = 22.31
+center_y = 3.51
+center_z = 46.50
+size_x = 35
+size_y = 35
+size_z = 35
+exhaustiveness = 16
+num_modes = 5
+energy_range = 3
+out = /data/ethylene/results/docking/all_candidates/1EYQ_Liquiritigenin_CID114829/docked.pdbqt
