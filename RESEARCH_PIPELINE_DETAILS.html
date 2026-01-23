@@ -1,0 +1,1407 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>연구 파이프라인 상세 기술 문서</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            font-size: 10pt;
+            color: #333;
+        }
+        
+        h1 {
+            color: #1a5f7a;
+            border-bottom: 3px solid #1a5f7a;
+            padding-bottom: 10px;
+            font-size: 20pt;
+            page-break-before: always;
+        }
+        
+        h1:first-of-type {
+            page-break-before: avoid;
+        }
+        
+        h2 {
+            color: #2d8659;
+            border-bottom: 2px solid #2d8659;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 14pt;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            font-size: 12pt;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            font-size: 9pt;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #1a5f7a;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 9pt;
+        }
+        
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 8pt;
+            line-height: 1.4;
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid #1a5f7a;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 30px 0;
+        }
+        
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+    </style>
+</head>
+<body>
+<h1 id="연구-파이프라인-상세-기술-문서">🔬 연구 파이프라인 상세 기술 문서</h1>
+
+<p><strong>프로젝트</strong>: 에틸렌 유도 이소플라보노이드 생합성 연구<br />
+<strong>작성일</strong>: 2026년 1월 15일<br />
+<strong>목적</strong>: 동료 연구자와의 기술 논의용  </p>
+
+<hr />
+
+<h2 id="목차">📋 목차</h2>
+
+<ol>
+<li><a href="#1-연구-개요">연구 개요</a></li>
+<li><a href="#2-데이터-소스-및-전처리">데이터 소스 및 전처리</a></li>
+<li><a href="#3-그래프-구축">그래프 구축</a></li>
+<li><a href="#4-gnn-모델-아키텍처">GNN 모델 아키텍처</a></li>
+<li><a href="#5-모델-학습-파이프라인">모델 학습 파이프라인</a></li>
+<li><a href="#6-해석-가능성-분석-gnnshap">해석 가능성 분석 (GNNShap)</a></li>
+<li><a href="#7-분자-도킹-파이프라인">분자 도킹 파이프라인</a></li>
+<li><a href="#8-md-시뮬레이션-계획">MD 시뮬레이션 계획</a></li>
+<li><a href="#9-검증-및-평가-지표">검증 및 평가 지표</a></li>
+<li><a href="#10-파일-구조-및-재현성">파일 구조 및 재현성</a></li>
+</ol>
+
+<hr />
+
+<h2 id="1-연구-개요">1. 연구 개요</h2>
+
+<h3 id="11-연구-배경">1.1 연구 배경</h3>
+
+<p>에틸렌 처리된 콩(Glycine max) 잎에서 <strong>말로닐화/아세틸화 이소플라본 접합체가 4,000배 이상 증가</strong>하는 현상을 발견하였습니다. 본 연구는 이 현상의 분자적 메커니즘을 규명하기 위해 멀티오믹스 데이터와 기계학습을 통합합니다.</p>
+
+<h3 id="12-연구-목표">1.2 연구 목표</h3>
+
+<ol>
+<li><strong>대사체-효소 상호작용 예측</strong>: GNN 기반 link prediction</li>
+<li><strong>구조적 검증</strong>: 분자 도킹을 통한 결합 가능성 평가</li>
+<li><strong>동적 안정성 검증</strong>: MD 시뮬레이션을 통한 결합 안정성 확인</li>
+<li><strong>신규 타겟 발굴</strong>: 문헌에 보고되지 않은 상호작용 발견</li>
+</ol>
+
+<h3 id="13-전체-파이프라인-개요">1.3 전체 파이프라인 개요</h3>
+
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                         RESEARCH PIPELINE OVERVIEW                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   [Phase 1: Data Integration]                                                │
+│   ┌───────────┐   ┌───────────┐   ┌───────────┐                             │
+│   │Metabolomics│   │Proteomics │   │ STRING DB │                             │
+│   │ MTBLS531  │   │ PXD006989 │   │    PPI    │                             │
+│   └─────┬─────┘   └─────┬─────┘   └─────┬─────┘                             │
+│         │               │               │                                    │
+│         └───────────────┼───────────────┘                                    │
+│                         ▼                                                    │
+│   [Phase 2: Graph Construction]                                              │
+│   ┌─────────────────────────────────────────┐                               │
+│   │     Heterogeneous Knowledge Graph        │                               │
+│   │  ┌─────────┐  ┌─────────┐  ┌────────┐  │                               │
+│   │  │ Enzyme  │──│Metabolite│──│   TF   │  │                               │
+│   │  └─────────┘  └─────────┘  └────────┘  │                               │
+│   └─────────────────┬───────────────────────┘                               │
+│                     ▼                                                        │
+│   [Phase 3: GNN Link Prediction]                                             │
+│   ┌─────────────────────────────────────────┐                               │
+│   │      HGT (Heterogeneous Graph          │                               │
+│   │           Transformer)                  │                               │
+│   │  • 4-head attention                    │                               │
+│   │  • 2 layers                            │                               │
+│   │  • 64-dim embeddings                   │                               │
+│   └─────────────────┬───────────────────────┘                               │
+│                     ▼                                                        │
+│   [Phase 4: Structural Validation]                                           │
+│   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐                   │
+│   │ AutoDock Vina│ → │ MD Simulation│ → │  MM-PBSA     │                   │
+│   │   Docking    │   │   100 ns     │   │  ΔG calc     │                   │
+│   └──────────────┘   └──────────────┘   └──────────────┘                   │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<hr />
+
+<h2 id="2-데이터-소스-및-전처리">2. 데이터 소스 및 전처리</h2>
+
+<h3 id="21-멀티오믹스-데이터">2.1 멀티오믹스 데이터</h3>
+
+<h4 id="대사체학-metabolomics">대사체학 (Metabolomics)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>항목</th>
+  <th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>데이터셋</strong></td>
+  <td>MTBLS531 (MetaboLights)</td>
+</tr>
+<tr>
+  <td><strong>분석 장비</strong></td>
+  <td>LC-MS/GC-MS</td>
+</tr>
+<tr>
+  <td><strong>처리 파일</strong></td>
+  <td><code>data/processed/mtbls531_differential.csv</code></td>
+</tr>
+<tr>
+  <td><strong>대사체 수</strong></td>
+  <td>79개</td>
+</tr>
+<tr>
+  <td><strong>유의 대사체</strong></td>
+  <td>43개 (54%, P &lt; 0.05)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>주요 발견:</strong>
+- 최대 Fold Change: 12-13× (Log2) = <strong>4,000-8,000× (linear)</strong>
+- Top 대사체: 6''-O-Malonyldaidzin, 6''-O-Malonylgenistin, 6''-O-Acetyldaidzin</p>
+
+<h4 id="단백체학-proteomics">단백체학 (Proteomics)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>항목</th>
+  <th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>데이터셋</strong></td>
+  <td>PXD006989 (PRIDE)</td>
+</tr>
+<tr>
+  <td><strong>분석 장비</strong></td>
+  <td>nLC-MS/MS</td>
+</tr>
+<tr>
+  <td><strong>처리 파일</strong></td>
+  <td><code>data/processed/pxd006989_differential.csv</code></td>
+</tr>
+<tr>
+  <td><strong>단백질 수</strong></td>
+  <td>&gt;6,000개</td>
+</tr>
+<tr>
+  <td><strong>핵심 효소</strong></td>
+  <td>6개 (이소플라보노이드 경로)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>핵심 효소 발현 변화:</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>효소</th>
+  <th>약자</th>
+  <th>Fold Change</th>
+  <th>P-value</th>
+  <th>기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Isoflavone Reductase</td>
+  <td>IFR</td>
+  <td>6.4×</td>
+  <td>&lt;0.01</td>
+  <td>이소플라본 환원</td>
+</tr>
+<tr>
+  <td>Chalcone Isomerase</td>
+  <td>CHI</td>
+  <td>5.1×</td>
+  <td>&lt;0.01</td>
+  <td>칼콘→플라바논 이성화</td>
+</tr>
+<tr>
+  <td>4-Coumarate CoA Ligase</td>
+  <td>4CL</td>
+  <td>3.9×</td>
+  <td>&lt;0.05</td>
+  <td>CoA 에스터 형성</td>
+</tr>
+<tr>
+  <td>Phenylalanine Ammonia Lyase</td>
+  <td>PAL</td>
+  <td>3.7×</td>
+  <td>&lt;0.05</td>
+  <td>페닐알라닌 탈아민화</td>
+</tr>
+<tr>
+  <td>Isoflavone Synthase</td>
+  <td>IFS</td>
+  <td>3.2×</td>
+  <td>&lt;0.05</td>
+  <td>이소플라본 합성</td>
+</tr>
+<tr>
+  <td>Chalcone Synthase</td>
+  <td>CHS</td>
+  <td>2.9×</td>
+  <td>&lt;0.05</td>
+  <td>칼콘 합성</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="22-단백질-상호작용-데이터">2.2 단백질 상호작용 데이터</h3>
+
+<h4 id="string-database-ppi">STRING Database (PPI)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>항목</th>
+  <th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>종</strong></td>
+  <td>Glycine max (Soybean)</td>
+</tr>
+<tr>
+  <td><strong>Confidence Threshold</strong></td>
+  <td>0.7 (high confidence)</td>
+</tr>
+<tr>
+  <td><strong>처리 스크립트</strong></td>
+  <td><code>src/dataloader.py</code> (StringDBLoader)</td>
+</tr>
+</tbody>
+</table>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># StringDBLoader 주요 기능</span>
+<span class="k">class</span> <span class="nc">StringDBLoader</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species_id</span><span class="o">=</span><span class="mi">3847</span><span class="p">,</span> <span class="n">score_threshold</span><span class="o">=</span><span class="mi">700</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        species_id: 3847 = Glycine max</span>
+<span class="sd">        score_threshold: 700 = high confidence (0.7)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</code></pre>
+</div>
+
+<h3 id="23-구조-데이터">2.3 구조 데이터</h3>
+
+<h4 id="수용체-pdb-구조">수용체 (PDB 구조)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>PDB ID</th>
+  <th>단백질</th>
+  <th>해상도</th>
+  <th>유기체</th>
+  <th>경로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>6YN7</td>
+  <td>β-Glucosidase</td>
+  <td>1.8 Å</td>
+  <td>Alicyclobacillus herbarius</td>
+  <td><code>data/structures/pdb/6YN7.pdb</code></td>
+</tr>
+<tr>
+  <td>8E83</td>
+  <td>2-HIS (IFS homolog)</td>
+  <td>2.0 Å</td>
+  <td>Medicago truncatula</td>
+  <td><code>data/structures/pdb/8E83.pdb</code></td>
+</tr>
+<tr>
+  <td>8EA1</td>
+  <td>2-HID</td>
+  <td>2.4 Å</td>
+  <td>Pueraria lobata</td>
+  <td><code>data/structures/pdb/8EA1.pdb</code></td>
+</tr>
+<tr>
+  <td>1EYQ</td>
+  <td>CHI</td>
+  <td>1.85 Å</td>
+  <td>Medicago sativa</td>
+  <td><code>data/structures/pdb/1EYQ.pdb</code></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="리간드-sdf-구조">리간드 (SDF 구조)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>화합물</th>
+  <th>PubChem CID</th>
+  <th>경로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>6''-O-Malonyldaidzin</td>
+  <td>5318574</td>
+  <td><code>data/structures/ligands/6-O-Malonyldaidzin_CID5318574.sdf</code></td>
+</tr>
+<tr>
+  <td>6''-O-Malonylgenistin</td>
+  <td>5318568</td>
+  <td><code>data/structures/ligands/6-O-Malonylgenistin_CID5318568.sdf</code></td>
+</tr>
+<tr>
+  <td>6''-O-Acetyldaidzin</td>
+  <td>14034712</td>
+  <td><code>data/structures/ligands/6-O-Acetyldaidzin_CID14034712.sdf</code></td>
+</tr>
+<tr>
+  <td>6''-O-Acetylgenistin</td>
+  <td>5320413</td>
+  <td><code>data/structures/ligands/6-O-Acetylgenistin_CID5320413.sdf</code></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="3-그래프-구축">3. 그래프 구축</h2>
+
+<h3 id="31-이종-그래프-heterogeneous-graph-설계">3.1 이종 그래프 (Heterogeneous Graph) 설계</h3>
+
+<p>우리 그래프는 다양한 노드 타입과 엣지 타입을 포함하는 <strong>이종 지식 그래프</strong>입니다.</p>
+
+<pre><code>Graph Schema:
+═══════════════════════════════════════════════════════════════
+
+Node Types:
+┌─────────────────────────────────────────────────────────────┐
+│ Type        │ Description          │ Feature Dim │ Count   │
+├─────────────┼──────────────────────┼─────────────┼─────────│
+│ Enzyme      │ 생합성 효소           │ 64          │ ~500    │
+│ Metabolite  │ 대사체 (이소플라본 등)  │ 64          │ ~200    │
+│ TF          │ 전사인자 (ERF 등)      │ 64          │ ~100    │
+└─────────────────────────────────────────────────────────────┘
+
+Edge Types:
+┌─────────────────────────────────────────────────────────────┐
+│ Edge Type                      │ Description                │
+├────────────────────────────────┼────────────────────────────│
+│ (Enzyme, catalyzes, Metabolite)│ 효소-대사체 촉매 관계       │
+│ (TF, regulates, Enzyme)        │ 전사인자-효소 조절 관계     │
+│ (Enzyme, interacts, Enzyme)    │ 효소-효소 상호작용 (PPI)   │
+│ (Metabolite, precursor, Met)   │ 대사체 전구체 관계         │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h3 id="32-그래프-구축-스크립트">3.2 그래프 구축 스크립트</h3>
+
+<p><strong>파일 위치</strong>: <code>src/bipartite_builder.py</code></p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">def</span> <span class="nf">build_bipartite_graph</span><span class="p">(</span><span class="n">graph_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Heterogeneous Graph (PPI + Metabolite-Enzyme) 구축</span>
+
+<span class="sd">    Process:</span>
+<span class="sd">    1. STRING PPI 그래프 로드</span>
+<span class="sd">    2. 대사체 노드 추가 (200개)</span>
+<span class="sd">    3. Enzyme-Metabolite 엣지 생성</span>
+<span class="sd">    4. MSI Level 기반 엣지 가중치 할당</span>
+<span class="sd">    5. 양방향 엣지 추가 (message passing용)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># MSI Level → Weight 매핑</span>
+    <span class="c1"># Level 2 (Strong evidence): 1.0</span>
+    <span class="c1"># Level 3 (Moderate): 0.7</span>
+    <span class="c1"># Level 4 (Weak): 0.4</span>
+    <span class="k">def</span> <span class="nf">get_msi_weight</span><span class="p">(</span><span class="n">met_idx</span><span class="p">):</span>
+        <span class="n">pathway</span> <span class="o">=</span> <span class="n">met_pathways</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">compounds</span><span class="p">[</span><span class="n">met_idx</span><span class="p">],</span> <span class="s1">&#39;Other&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pathway</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Phenylpropanoid&#39;</span><span class="p">,</span> <span class="s1">&#39;Flavonoid&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="mf">1.0</span>  <span class="c1"># High confidence</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.4</span>  <span class="c1"># Lower confidence</span>
+</code></pre>
+</div>
+
+<h3 id="33-특징-벡터-초기화">3.3 특징 벡터 초기화</h3>
+
+<table>
+<thead>
+<tr>
+  <th>노드 타입</th>
+  <th>초기화 방법</th>
+  <th>차원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Enzyme</td>
+  <td>Random Normal</td>
+  <td>64</td>
+</tr>
+<tr>
+  <td>Metabolite</td>
+  <td>Random Normal (향후 분자기술자 사용 가능)</td>
+  <td>64</td>
+</tr>
+<tr>
+  <td>TF</td>
+  <td>Random Normal</td>
+  <td>64</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p><strong>향후 개선점</strong>: 분자 fingerprint (Morgan/ECFP), ESM-2 protein embeddings 사용 가능</p>
+</blockquote>
+
+<hr />
+
+<h2 id="4-gnn-모델-아키텍처">4. GNN 모델 아키텍처</h2>
+
+<h3 id="41-구현된-모델-옵션">4.1 구현된 모델 옵션</h3>
+
+<p><strong>파일 위치</strong>: <code>src/model.py</code></p>
+
+<table>
+<thead>
+<tr>
+  <th>모델</th>
+  <th>클래스명</th>
+  <th>설명</th>
+  <th>사용 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>HGT</strong> ⭐</td>
+  <td><code>HGT</code></td>
+  <td>Heterogeneous Graph Transformer</td>
+  <td>메인 모델</td>
+</tr>
+<tr>
+  <td>HAN</td>
+  <td><code>HAN</code></td>
+  <td>Heterogeneous Attention Network</td>
+  <td>비교 실험</td>
+</tr>
+<tr>
+  <td>HeteroSAGE</td>
+  <td><code>HeteroSAGE</code></td>
+  <td>Heterogeneous GraphSAGE</td>
+  <td>Baseline</td>
+</tr>
+<tr>
+  <td>SimpleMLP</td>
+  <td><code>SimpleMLP</code></td>
+  <td>Multi-Layer Perceptron (그래프 무시)</td>
+  <td>Ablation</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="42-hgt-메인-모델-상세-설명">4.2 HGT (메인 모델) 상세 설명</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">class</span> <span class="nc">HGT</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Heterogeneous Graph Transformer</span>
+
+<span class="sd">    논문: &quot;Heterogeneous Graph Transformer&quot; (WWW 2020)</span>
+
+<span class="sd">    핵심 특징:</span>
+<span class="sd">    - 노드/엣지 타입별 서로 다른 attention 파라미터</span>
+<span class="sd">    - Multi-head attention mechanism</span>
+<span class="sd">    - Type-aware message passing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">hidden_channels</span><span class="p">,</span> 
+                 <span class="n">out_channels</span><span class="p">,</span> <span class="n">num_heads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># 1. 노드 타입별 입력 투영 레이어</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lin_dict</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleDict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">node_type</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lin_dict</span><span class="p">[</span><span class="n">node_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">hidden_channels</span><span class="p">)</span>
+
+        <span class="c1"># 2. HGT Convolution 레이어 스택</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">convs</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">):</span>
+            <span class="n">conv</span> <span class="o">=</span> <span class="n">HGTConv</span><span class="p">(</span>
+                <span class="n">hidden_channels</span><span class="p">,</span> 
+                <span class="n">hidden_channels</span><span class="p">,</span> 
+                <span class="n">metadata</span><span class="p">,</span> 
+                <span class="n">heads</span><span class="o">=</span><span class="n">num_heads</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">convs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">conv</span><span class="p">)</span>
+
+        <span class="c1"># 3. 출력 레이어</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_lin</span> <span class="o">=</span> <span class="n">Linear</span><span class="p">(</span><span class="n">hidden_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_dict</span><span class="p">,</span> <span class="n">edge_index_dict</span><span class="p">):</span>
+        <span class="c1"># Step 1: 타입별 특징 투영 + ReLU</span>
+        <span class="n">x_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">node_type</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">lin_dict</span><span class="p">[</span><span class="n">node_type</span><span class="p">](</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">relu_</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">node_type</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Step 2: HGT Convolution 통과</span>
+        <span class="k">for</span> <span class="n">conv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">convs</span><span class="p">:</span>
+            <span class="n">x_dict</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">x_dict</span><span class="p">,</span> <span class="n">edge_index_dict</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">x_dict</span>
+</code></pre>
+</div>
+
+<h3 id="43-hgt-아키텍처-다이어그램">4.3 HGT 아키텍처 다이어그램</h3>
+
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                    HGT ARCHITECTURE DETAIL                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│ Input:                                                                       │
+│ ┌───────────────────────────────────────────────────────────────────────┐   │
+│ │  x_dict = {                                                            │   │
+│ │      'Enzyme': [N_enz × 64],                                          │   │
+│ │      'Metabolite': [N_met × 64],                                      │   │
+│ │      'TF': [N_tf × 64]                                                │   │
+│ │  }                                                                     │   │
+│ └───────────────────────────────────────────────────────────────────────┘   │
+│                              │                                               │
+│                              ▼                                               │
+│ ┌───────────────────────────────────────────────────────────────────────┐   │
+│ │  Lin_dict (Type-specific Linear Projection)                           │   │
+│ │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐        │   │
+│ │  │ Enzyme → 64→64  │  │ Metabolite→64→64│  │ TF → 64→64     │        │   │
+│ │  └─────────────────┘  └─────────────────┘  └─────────────────┘        │   │
+│ └───────────────────────────────────────────────────────────────────────┘   │
+│                              │ ReLU                                          │
+│                              ▼                                               │
+│ ┌───────────────────────────────────────────────────────────────────────┐   │
+│ │  HGTConv Layer 1 (4 Attention Heads)                                   │   │
+│ │  ┌─────────────────────────────────────────────────────────────────┐  │   │
+│ │  │  For each edge type (src_type, rel, dst_type):                  │  │   │
+│ │  │    • Q = W_Q[rel] × x[dst]                                      │  │   │
+│ │  │    • K = W_K[rel] × x[src]                                      │  │   │
+│ │  │    • V = W_V[rel] × x[src]                                      │  │   │
+│ │  │    • Attention = softmax(Q·K^T / √d)                            │  │   │
+│ │  │    • Message = Attention × V                                    │  │   │
+│ │  │    • Aggregate messages per dst node                            │  │   │
+│ │  └─────────────────────────────────────────────────────────────────┘  │   │
+│ └───────────────────────────────────────────────────────────────────────┘   │
+│                              │                                               │
+│                              ▼                                               │
+│ ┌───────────────────────────────────────────────────────────────────────┐   │
+│ │  HGTConv Layer 2 (4 Attention Heads)                                   │   │
+│ │  [Same structure as Layer 1]                                           │   │
+│ └───────────────────────────────────────────────────────────────────────┘   │
+│                              │                                               │
+│                              ▼                                               │
+│ Output:                                                                      │
+│ ┌───────────────────────────────────────────────────────────────────────┐   │
+│ │  x_dict = {                                                            │   │
+│ │      'Enzyme': [N_enz × 64] (updated embeddings),                     │   │
+│ │      'Metabolite': [N_met × 64],                                      │   │
+│ │      'TF': [N_tf × 64]                                                │   │
+│ │  }                                                                     │   │
+│ └───────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h3 id="44-link-predictor">4.4 Link Predictor</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">class</span> <span class="nc">LinkPredictor</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    노드 임베딩 쌍으로부터 엣지 존재 확률 예측</span>
+
+<span class="sd">    Method: Dot Product Scoring</span>
+<span class="sd">    score(u, v) = embedding(u) · embedding(v)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_src</span><span class="p">,</span> <span class="n">x_dst</span><span class="p">,</span> <span class="n">edge_label_index</span><span class="p">):</span>
+        <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">edge_label_index</span>
+        <span class="n">src_feats</span> <span class="o">=</span> <span class="n">x_src</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>  <span class="c1"># Source node embeddings</span>
+        <span class="n">dst_feats</span> <span class="o">=</span> <span class="n">x_dst</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>  <span class="c1"># Destination node embeddings</span>
+
+        <span class="c1"># Element-wise product + sum = dot product</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">src_feats</span> <span class="o">*</span> <span class="n">dst_feats</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="45-하이퍼파라미터-설정">4.5 하이퍼파라미터 설정</h3>
+
+<table>
+<thead>
+<tr>
+  <th>파라미터</th>
+  <th>값</th>
+  <th>선택 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>in_channels</code></td>
+  <td>64</td>
+  <td>노드 특징 차원</td>
+</tr>
+<tr>
+  <td><code>hidden_channels</code></td>
+  <td>64</td>
+  <td>모델 용량</td>
+</tr>
+<tr>
+  <td><code>out_channels</code></td>
+  <td>64</td>
+  <td>출력 임베딩 차원</td>
+</tr>
+<tr>
+  <td><code>num_heads</code></td>
+  <td>4</td>
+  <td>Multi-head attention</td>
+</tr>
+<tr>
+  <td><code>num_layers</code></td>
+  <td>2</td>
+  <td>2-hop 이웃 정보 집약</td>
+</tr>
+<tr>
+  <td><code>learning_rate</code></td>
+  <td>0.01</td>
+  <td>Adam 옵티마이저</td>
+</tr>
+<tr>
+  <td><code>epochs</code></td>
+  <td>10-100</td>
+  <td>조기 종료</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="5-모델-학습-파이프라인">5. 모델 학습 파이프라인</h2>
+
+<h3 id="51-데이터-분할">5.1 데이터 분할</h3>
+
+<p><strong>파일 위치</strong>: <code>src/trainer.py</code></p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># RandomLinkSplit 사용</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">RandomLinkSplit</span><span class="p">(</span>
+    <span class="n">num_val</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>       <span class="c1"># 10% 검증</span>
+    <span class="n">num_test</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>      <span class="c1"># 10% 테스트</span>
+    <span class="n">is_undirected</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">edge_types</span><span class="o">=</span><span class="p">[</span><span class="n">target_edge_type</span><span class="p">],</span>
+    <span class="n">add_negative_train_samples</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="52-학습-루프">5.2 학습 루프</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">():</span>
+    <span class="c1"># 1. 전방향 패스</span>
+    <span class="n">x_dict</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">x_dict</span><span class="p">,</span> <span class="n">train_data</span><span class="o">.</span><span class="n">edge_index_dict</span><span class="p">)</span>
+
+    <span class="c1"># 2. Positive 샘플 점수</span>
+    <span class="n">pos_out</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">x_dict</span><span class="p">[</span><span class="n">src_type</span><span class="p">],</span> <span class="n">x_dict</span><span class="p">[</span><span class="n">dst_type</span><span class="p">],</span> 
+                        <span class="n">edge_label_index</span><span class="p">)</span>
+
+    <span class="c1"># 3. Negative 샘플링 (Random)</span>
+    <span class="n">neg_dst_idx</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x_dict</span><span class="p">[</span><span class="n">dst_type</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> 
+                                 <span class="p">(</span><span class="n">src_idx</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">neg_out</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">x_dict</span><span class="p">[</span><span class="n">src_type</span><span class="p">],</span> <span class="n">x_dict</span><span class="p">[</span><span class="n">dst_type</span><span class="p">],</span> 
+                        <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">src_idx</span><span class="p">,</span> <span class="n">neg_dst_idx</span><span class="p">]))</span>
+
+    <span class="c1"># 4. Binary Cross Entropy Loss</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">pos_out</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-15</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> \
+           <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">neg_out</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-15</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># 5. 역전파 및 최적화</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<h3 id="53-평가-지표">5.3 평가 지표</h3>
+
+<table>
+<thead>
+<tr>
+  <th>지표</th>
+  <th>설명</th>
+  <th>목표 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>AUC-ROC</strong></td>
+  <td>Area Under ROC Curve</td>
+  <td>&gt; 0.85</td>
+</tr>
+<tr>
+  <td><strong>Hits@K</strong></td>
+  <td>Top-K 예측 중 실제 양성 비율</td>
+  <td>&gt; 0.5</td>
+</tr>
+<tr>
+  <td><strong>MRR</strong></td>
+  <td>Mean Reciprocal Rank</td>
+  <td>&gt; 0.3</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="6-해석-가능성-분석-gnnshap">6. 해석 가능성 분석 (GNNShap)</h2>
+
+<h3 id="61-목적">6.1 목적</h3>
+
+<p>GNN 예측의 <strong>블랙박스 문제</strong>를 해결하기 위해, 각 예측에 어떤 엣지가 중요하게 기여했는지 <strong>Shapley Value</strong>를 통해 계산합니다.</p>
+
+<h3 id="62-방법론">6.2 방법론</h3>
+
+<p><strong>파일 위치</strong>: <code>src/gnnshap_explainability.py</code></p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">def</span> <span class="nf">compute_shapley_values</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">predictor</span><span class="p">,</span> 
+                           <span class="n">src_type</span><span class="p">,</span> <span class="n">src_idx</span><span class="p">,</span> <span class="n">dst_type</span><span class="p">,</span> <span class="n">dst_idx</span><span class="p">,</span>
+                           <span class="n">edges</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Monte Carlo 샘플링으로 Shapley Value 근사 계산</span>
+
+<span class="sd">    Algorithm:</span>
+<span class="sd">    1. K-hop 이웃의 엣지들 수집 (max 20개)</span>
+<span class="sd">    2. n_samples 번 반복:</span>
+<span class="sd">       a. 랜덤 순열 생성</span>
+<span class="sd">       b. 순차적으로 엣지 추가하며 점수 변화 측정</span>
+<span class="sd">       c. 각 엣지의 marginal contribution 누적</span>
+<span class="sd">    3. 평균 계산 → Shapley Value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">shapley_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_edges</span><span class="p">)}</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="n">perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">n_edges</span><span class="p">)</span>
+
+        <span class="n">prev_score</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">edge_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">perm</span><span class="p">):</span>
+            <span class="c1"># Coalition 구성</span>
+            <span class="n">edges_to_mask</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+            <span class="n">masked_data</span> <span class="o">=</span> <span class="n">mask_edges</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">edges_to_mask</span><span class="p">)</span>
+
+            <span class="c1"># 점수 계산</span>
+            <span class="n">x_dict</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">masked_data</span><span class="o">.</span><span class="n">x_dict</span><span class="p">,</span> <span class="n">masked_data</span><span class="o">.</span><span class="n">edge_index_dict</span><span class="p">)</span>
+            <span class="n">curr_score</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+            <span class="c1"># Marginal contribution</span>
+            <span class="n">shapley_values</span><span class="p">[</span><span class="n">edge_idx</span><span class="p">]</span> <span class="o">+=</span> <span class="n">curr_score</span> <span class="o">-</span> <span class="n">prev_score</span>
+            <span class="n">prev_score</span> <span class="o">=</span> <span class="n">curr_score</span>
+
+    <span class="c1"># 평균</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">shapley_values</span><span class="p">:</span>
+        <span class="n">shapley_values</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">/=</span> <span class="n">n_samples</span>
+
+    <span class="k">return</span> <span class="n">shapley_values</span>
+</code></pre>
+</div>
+
+<h3 id="63-fidelity-검증">6.3 Fidelity 검증</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">def</span> <span class="nf">compute_explanation_fidelity</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">top_edges</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    설명의 신뢰도 검증</span>
+
+<span class="sd">    Fidelity = 원래 점수 - Top-K 엣지 제거 후 점수</span>
+
+<span class="sd">    높은 Fidelity = 설명이 실제로 중요한 엣지를 잘 식별함</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre>
+</div>
+
+<h3 id="64-출력-예시">6.4 출력 예시</h3>
+
+<pre><code>Explaining Enzyme[42] → Metabolite[15] (Score: 0.9234)
+  Fidelity: 0.4521 (Original: 0.9234 → After: 0.4713)
+  Top-3 edges:
+    1. ('Enzyme', 'catalyzes', 'Metabolite') (Shapley: 0.1823)
+    2. ('TF', 'regulates', 'Enzyme') (Shapley: 0.1156)
+    3. ('Enzyme', 'interacts', 'Enzyme') (Shapley: 0.0892)
+</code></pre>
+
+<hr />
+
+<h2 id="7-분자-도킹-파이프라인">7. 분자 도킹 파이프라인</h2>
+
+<h3 id="71-목적">7.1 목적</h3>
+
+<p>GNN이 예측한 <strong>대사체-효소 결합</strong>을 구조적으로 검증합니다.</p>
+
+<h3 id="72-도킹-워크플로우">7.2 도킹 워크플로우</h3>
+
+<p><strong>파일 위치</strong>: <code>src/run_docking.py</code></p>
+
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                      MOLECULAR DOCKING PIPELINE                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Step 1: Structure Retrieval                                                │
+│   ┌───────────────────────────────────────────────────────────────────────┐ │
+│   │  Receptor: AlphaFold API → PDB                                        │ │
+│   │  Ligand: KEGG REST API → MOL                                          │ │
+│   │  (Also: PubChem → SDF)                                                │ │
+│   └───────────────────────────────────────────────────────────────────────┘ │
+│                              │                                               │
+│                              ▼                                               │
+│   Step 2: Structure Preparation                                              │
+│   ┌───────────────────────────────────────────────────────────────────────┐ │
+│   │  OpenBabel:                                                           │ │
+│   │  • PDB → PDBQT (receptor, add H, Gasteiger charges)                  │ │
+│   │  • MOL → PDBQT (ligand, 3D generation, add H)                        │ │
+│   └───────────────────────────────────────────────────────────────────────┘ │
+│                              │                                               │
+│                              ▼                                               │
+│   Step 3: Docking Calculation                                                │
+│   ┌───────────────────────────────────────────────────────────────────────┐ │
+│   │  AutoDock Vina:                                                       │ │
+│   │  • Blind docking (80×80×80 Å grid)                                   │ │
+│   │  • exhaustiveness = 8                                                 │ │
+│   │  • CPU = 4                                                            │ │
+│   └───────────────────────────────────────────────────────────────────────┘ │
+│                              │                                               │
+│                              ▼                                               │
+│   Step 4: Results                                                            │
+│   ┌───────────────────────────────────────────────────────────────────────┐ │
+│   │  Output: docked.pdbqt (poses), docking.log (affinities)               │ │
+│   │  Best Affinity: kcal/mol (more negative = stronger binding)           │ │
+│   └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h3 id="73-주요-함수">7.3 주요 함수</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">def</span> <span class="nf">prepare_receptor</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">,</span> <span class="n">out_pdbqt</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;PDB → PDBQT 변환 (OpenBabel)&quot;&quot;&quot;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="n">OBABEL_PATH</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">),</span> <span class="s2">&quot;-xr&quot;</span><span class="p">,</span> <span class="s2">&quot;-O&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">out_pdbqt</span><span class="p">),</span> 
+           <span class="s2">&quot;-h&quot;</span><span class="p">,</span> <span class="s2">&quot;--partialcharge&quot;</span><span class="p">,</span> <span class="s2">&quot;gasteiger&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">prepare_ligand</span><span class="p">(</span><span class="n">mol_file</span><span class="p">,</span> <span class="n">out_pdbqt</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;MOL → PDBQT 변환 (3D 구조 생성)&quot;&quot;&quot;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="n">OBABEL_PATH</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">mol_file</span><span class="p">),</span> <span class="s2">&quot;-O&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">out_pdbqt</span><span class="p">),</span> 
+           <span class="s2">&quot;-h&quot;</span><span class="p">,</span> <span class="s2">&quot;--gen3d&quot;</span><span class="p">,</span> <span class="s2">&quot;--partialcharge&quot;</span><span class="p">,</span> <span class="s2">&quot;gasteiger&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">run_vina</span><span class="p">(</span><span class="n">receptor_pdbqt</span><span class="p">,</span> <span class="n">ligand_pdbqt</span><span class="p">,</span> <span class="n">out_pdbqt</span><span class="p">,</span> <span class="n">log_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;AutoDock Vina 실행&quot;&quot;&quot;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">VINA_PATH</span><span class="p">,</span>
+        <span class="s2">&quot;--receptor&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">receptor_pdbqt</span><span class="p">),</span>
+        <span class="s2">&quot;--ligand&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ligand_pdbqt</span><span class="p">),</span>
+        <span class="s2">&quot;--out&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">out_pdbqt</span><span class="p">),</span>
+        <span class="s2">&quot;--center_x&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;--center_y&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;--center_z&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--size_x&quot;</span><span class="p">,</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span> <span class="s2">&quot;--size_y&quot;</span><span class="p">,</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span> <span class="s2">&quot;--size_z&quot;</span><span class="p">,</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--cpu&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;--exhaustiveness&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span>
+    <span class="p">]</span>
+</code></pre>
+</div>
+
+<h3 id="74-도킹-결과-요약">7.4 도킹 결과 요약</h3>
+
+<table>
+<thead>
+<tr>
+  <th>순위</th>
+  <th>리간드</th>
+  <th>수용체</th>
+  <th>도킹 점수 (kcal/mol)</th>
+  <th>신규성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>6''-O-Malonyldaidzin</td>
+  <td>β-Glucosidase (6YN7)</td>
+  <td><strong>-9.165</strong></td>
+  <td>★★★</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>6''-O-Acetyldaidzin</td>
+  <td>2-HIS (8E83)</td>
+  <td><strong>-8.863</strong></td>
+  <td>★★★</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>6''-O-Acetylgenistin</td>
+  <td>2-HIS (8E83)</td>
+  <td><strong>-7.768</strong></td>
+  <td>★★★</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>6''-O-Malonylgenistin</td>
+  <td>2-HIS (8E83)</td>
+  <td><strong>-7.485</strong></td>
+  <td>★★★</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Daidzin</td>
+  <td>β-Glucosidase (6YN7)</td>
+  <td>-8.496</td>
+  <td>(기존 Km 데이터)</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p><strong>해석</strong>: 도킹 점수 -7 kcal/mol 이하는 생물학적으로 유의미한 결합력으로 간주</p>
+</blockquote>
+
+<hr />
+
+<h2 id="8-md-시뮬레이션-계획">8. MD 시뮬레이션 계획</h2>
+
+<h3 id="81-목적">8.1 목적</h3>
+
+<p>도킹 결과의 <strong>동적 안정성</strong> 검증 및 <strong>정밀 결합 에너지</strong> 계산</p>
+
+<h3 id="82-시뮬레이션-프로토콜">8.2 시뮬레이션 프로토콜</h3>
+
+<p><strong>파일 위치</strong>: <code>md_protocol/mdp/</code></p>
+
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                      MD SIMULATION PROTOCOL                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Phase 1: System Preparation                                                │
+│   ├── 리간드 파라미터화: GAFF2 / CGenFF                                       │
+│   ├── 시스템 구축: protein + ligand + water + ions                          │
+│   └── 토폴로지 생성: GROMACS pdb2gmx / AMBER tleap                          │
+│                                                                              │
+│   Phase 2: Energy Minimization (em.mdp)                                      │
+│   ├── Algorithm: Steepest Descent                                           │
+│   ├── Steps: 50,000                                                          │
+│   └── Tolerance: 1000 kJ/mol/nm                                              │
+│                                                                              │
+│   Phase 3: NVT Equilibration (nvt.mdp)                                       │
+│   ├── Duration: 100 ps                                                       │
+│   ├── Temperature: 300 K                                                     │
+│   ├── Thermostat: V-rescale                                                  │
+│   └── Restraints: Protein backbone                                           │
+│                                                                              │
+│   Phase 4: NPT Equilibration (npt.mdp)                                       │
+│   ├── Duration: 100 ps                                                       │
+│   ├── Pressure: 1 bar                                                        │
+│   ├── Barostat: Parrinello-Rahman                                            │
+│   └── Restraints: Protein backbone (reduced)                                 │
+│                                                                              │
+│   Phase 5: Production MD (md_100ns.mdp)                                      │
+│   ├── Duration: 100 ns                                                       │
+│   ├── Time step: 2 fs                                                        │
+│   ├── Output: 10 ps intervals                                                │
+│   └── Constraints: LINCS (H-bonds)                                           │
+│                                                                              │
+│   Phase 6: Analysis                                                          │
+│   ├── RMSD: Ligand stability                                                 │
+│   ├── RMSF: Binding site flexibility                                         │
+│   ├── H-bonds: Protein-ligand hydrogen bonds                                 │
+│   └── MM-PBSA/GBSA: Binding free energy                                      │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h3 id="83-예상-산출물">8.3 예상 산출물</h3>
+
+<table>
+<thead>
+<tr>
+  <th>산출물</th>
+  <th>형식</th>
+  <th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>RMSD plot</td>
+  <td>PNG/PDF</td>
+  <td>리간드 RMSD 시간 변화 (수렴 확인)</td>
+</tr>
+<tr>
+  <td>Binding ΔG</td>
+  <td>표</td>
+  <td>MM-PBSA 결합 자유 에너지 ± 오차</td>
+</tr>
+<tr>
+  <td>Key residues</td>
+  <td>목록</td>
+  <td>상호작용 기여도 상위 10개 잔기</td>
+</tr>
+<tr>
+  <td>H-bond analysis</td>
+  <td>그래프</td>
+  <td>수소결합 개수 시간 변화</td>
+</tr>
+<tr>
+  <td>Representative snapshot</td>
+  <td>PDB</td>
+  <td>안정 상태 대표 구조</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="84-예상-일정">8.4 예상 일정</h3>
+
+<table>
+<thead>
+<tr>
+  <th>단계</th>
+  <th>시스템 3개 기준 소요 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>시스템 준비</td>
+  <td>1일</td>
+</tr>
+<tr>
+  <td>Equilibration</td>
+  <td>0.5일</td>
+</tr>
+<tr>
+  <td>Production MD</td>
+  <td>3-5일 (GPU)</td>
+</tr>
+<tr>
+  <td>분석</td>
+  <td>1-2일</td>
+</tr>
+<tr>
+  <td><strong>총계</strong></td>
+  <td><strong>5-8일</strong></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="9-검증-및-평가-지표">9. 검증 및 평가 지표</h2>
+
+<h3 id="91-gnn-모델-평가">9.1 GNN 모델 평가</h3>
+
+<table>
+<thead>
+<tr>
+  <th>지표</th>
+  <th>공식</th>
+  <th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>AUC-ROC</td>
+  <td>Area under ROC curve</td>
+  <td>≥ 0.85</td>
+</tr>
+<tr>
+  <td>Hits@10</td>
+  <td>True positives in top 10 / Total positives</td>
+  <td>≥ 0.5</td>
+</tr>
+<tr>
+  <td>MRR</td>
+  <td>Mean(1/rank of first true positive)</td>
+  <td>≥ 0.3</td>
+</tr>
+<tr>
+  <td>Fidelity</td>
+  <td>Score drop when removing important edges</td>
+  <td>&gt; 0.3</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="92-경로-분석-통계">9.2 경로 분석 통계</h3>
+
+<table>
+<thead>
+<tr>
+  <th>분석</th>
+  <th>방법</th>
+  <th>기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Pathway Enrichment</td>
+  <td>Fisher's Exact Test</td>
+  <td>P &lt; 0.05</td>
+</tr>
+<tr>
+  <td>Multiple Testing</td>
+  <td>Benjamini-Hochberg FDR</td>
+  <td>FDR &lt; 0.1</td>
+</tr>
+<tr>
+  <td>Effect Size</td>
+  <td>Odds Ratio + 95% CI</td>
+  <td>OR &gt; 2</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="93-도킹md-품질-지표">9.3 도킹/MD 품질 지표</h3>
+
+<table>
+<thead>
+<tr>
+  <th>지표</th>
+  <th>기준</th>
+  <th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Docking Score</td>
+  <td>&lt; -7 kcal/mol</td>
+  <td>유의미한 결합</td>
+</tr>
+<tr>
+  <td>Ligand RMSD</td>
+  <td>&lt; 3 Å (수렴)</td>
+  <td>안정적 결합</td>
+</tr>
+<tr>
+  <td>MM-PBSA ΔG</td>
+  <td>&lt; -5 kcal/mol</td>
+  <td>강한 결합</td>
+</tr>
+<tr>
+  <td>H-bond occupancy</td>
+  <td>&gt; 30%</td>
+  <td>안정적 상호작용</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="10-파일-구조-및-재현성">10. 파일 구조 및 재현성</h2>
+
+<h3 id="101-프로젝트-구조">10.1 프로젝트 구조</h3>
+
+<pre><code>/data/ethylene/
+├── data/
+│   ├── processed/           # 전처리된 데이터
+│   │   ├── mtbls531_differential.csv
+│   │   ├── pxd006989_differential.csv
+│   │   ├── graph.pt            # PPI 그래프
+│   │   ├── bipartite_graph.pt  # 이종 그래프
+│   │   └── strict_bipartite_v2.pt
+│   └── structures/          # 구조 파일
+│       ├── pdb/             # 수용체 PDB
+│       └── ligands/         # 리간드 SDF
+│
+├── src/                     # 핵심 스크립트 (78개)
+│   ├── model.py             # GNN 모델 정의
+│   ├── trainer.py           # 학습 루프
+│   ├── bipartite_builder.py # 그래프 구축
+│   ├── run_docking.py       # 도킹 파이프라인
+│   ├── gnnshap_explainability.py  # 해석 가능성
+│   └── ...
+│
+├── md_protocol/             # MD 시뮬레이션
+│   └── mdp/                 # MDP 설정 파일
+│       ├── em.mdp
+│       ├── nvt.mdp
+│       ├── npt.mdp
+│       └── md_100ns.mdp
+│
+├── results/                 # 결과물
+│   ├── docking/             # 도킹 결과
+│   ├── figures/             # 생성된 그림
+│   └── explainability/      # GNNShap 결과
+│
+└── docs/                    # 문서
+    └── MANUSCRIPT_*.md      # 논문 초안
+</code></pre>
+
+<h3 id="102-재현-스크립트">10.2 재현 스크립트</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># 1. 환경 설정</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ethylene<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+conda<span class="w"> </span>activate<span class="w"> </span>ethylene
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c1"># 2. 그래프 구축</span>
+python<span class="w"> </span>src/bipartite_builder.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--graph<span class="w"> </span>data/processed/graph.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span>data/processed/bipartite_graph.pt
+
+<span class="c1"># 3. GNN 학습</span>
+python<span class="w"> </span>src/trainer.py
+
+<span class="c1"># 4. 해석 가능성 분석</span>
+python<span class="w"> </span>src/gnnshap_explainability.py
+
+<span class="c1"># 5. 분자 도킹</span>
+python<span class="w"> </span>src/run_docking.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input<span class="w"> </span>results/gnn/top_candidates.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--outdir<span class="w"> </span>results/docking
+
+<span class="c1"># 6. 그림 생성</span>
+python<span class="w"> </span>src/generate_pathway_figures.py
+python<span class="w"> </span>src/generate_enhanced_figures.py
+</code></pre>
+</div>
+
+<h3 id="103-의존성">10.3 의존성</h3>
+
+<pre><code># requirements.txt
+torch&gt;=2.0
+torch-geometric&gt;=2.4
+pandas&gt;=2.0
+numpy&gt;=1.24
+matplotlib&gt;=3.7
+scipy&gt;=1.10
+scikit-learn&gt;=1.2
+requests&gt;=2.28
+tqdm&gt;=4.65
+</code></pre>
+
+<hr />
+
+<h2 id="논의-포인트">📌 논의 포인트</h2>
+
+<h3 id="연구-방법론-관련">연구 방법론 관련</h3>
+
+<ol>
+<li><strong>GNN 모델 선택</strong>: HGT vs 다른 아키텍처 (GAT, HAN)?</li>
+<li><strong>특징 벡터 초기화</strong>: Random vs 분자 기술자 (Morgan fingerprint, ESM-2)?</li>
+<li><strong>Negative Sampling 전략</strong>: Random vs Hard negative mining?</li>
+</ol>
+
+<h3 id="검증-관련">검증 관련</h3>
+
+<ol start="4">
+<li><strong>도킹 결과 해석</strong>: 점수 cutoff -7 vs -8 kcal/mol?</li>
+<li><strong>MD 시뮬레이션 시간</strong>: 100 ns 충분? 200 ns 필요?</li>
+<li><strong>실험적 검증</strong>: 효소 활성 측정, SPR/ITC 결합 측정?</li>
+</ol>
+
+<h3 id="확장-관련">확장 관련</h3>
+
+<ol start="7">
+<li><strong>다른 호르몬 처리</strong>: JA (자스몬산), SA (살리실산) 추가?</li>
+<li><strong>다른 조직</strong>: 콩잎 외에 뿌리, 종자 데이터?</li>
+</ol>
+
+<hr />
+
+<h2 id="참고-문헌">📚 참고 문헌</h2>
+
+<ol>
+<li>Yuk et al. (2016) "Ethylene Induced High Accumulation of Dietary Isoflavones..." J. Agric. Food Chem.</li>
+<li>Hu et al. (2020) "Heterogeneous Graph Transformer" WWW 2020</li>
+<li>Trott &amp; Olson (2010) "AutoDock Vina: Improving the speed and accuracy of docking" J. Comput. Chem.</li>
+<li>Lundberg &amp; Lee (2017) "A Unified Approach to Interpreting Model Predictions" NeurIPS</li>
+</ol>
+
+<hr />
+
+<p><strong>작성자</strong>: Claude AI<br />
+<strong>검토 요청</strong>: 동료 연구자<br />
+<strong>다음 단계</strong>: MD 시뮬레이션 수행 후 결과 업데이트</p>
+
+</body>
+</html>

@@ -1,3 +1,16 @@
+"""
+DEPRECATED: Simulated Bipartite Graph Builder
+
+This module uses simulated enzyme-metabolite edges and is kept for
+backward compatibility. For production use, please use:
+    - src/data_pipeline.py (recommended)
+    - src/enhanced_bipartite_builder.py (real KEGG data)
+
+The simulated edges in this module do not reflect actual biochemical
+relationships and should only be used for initial testing.
+"""
+
+import warnings
 import torch
 import torch_geometric.transforms as T
 from torch_geometric.data import HeteroData
@@ -5,6 +18,14 @@ import pandas as pd
 import numpy as np
 import os
 from src.dataloader import StringDBLoader
+
+# Issue deprecation warning on import
+warnings.warn(
+    "bipartite_builder.py is deprecated. Use data_pipeline.py or "
+    "enhanced_bipartite_builder.py instead for real KEGG data.",
+    DeprecationWarning,
+    stacklevel=2
+)
 
 def build_bipartite_graph(graph_path, output_path):
     """

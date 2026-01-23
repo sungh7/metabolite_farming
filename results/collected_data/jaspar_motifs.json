@@ -1,0 +1,156 @@
+{
+  "plant_tf_motifs": [
+    {
+      "matrix_id": "MA0570.1",
+      "name": "ABF1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0570.2",
+      "name": "ABF1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0570.3",
+      "name": "ABF1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0941.1",
+      "name": "ABF2",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0941.2",
+      "name": "ABF2",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0930.1",
+      "name": "ABF3",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0930.2",
+      "name": "ABF3",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0930.3",
+      "name": "ABF3",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA1659.1",
+      "name": "ABF4",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA1659.2",
+      "name": "ABF4",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0564.1",
+      "name": "ABI3",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0564.2",
+      "name": "ABI3",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0931.1",
+      "name": "ABI5",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0931.2",
+      "name": "ABI5",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA1244.1",
+      "name": "ABR1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA1244.2",
+      "name": "ABR1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0005.1",
+      "name": "AG",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0005.2",
+      "name": "AG",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0005.3",
+      "name": "AG",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0585.1",
+      "name": "AGL1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0585.2",
+      "name": "AGL1",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA1204.1",
+      "name": "AGL13",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0548.1",
+      "name": "AGL15",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0548.2",
+      "name": "AGL15",
+      "species": "",
+      "tf_class": ""
+    },
+    {
+      "matrix_id": "MA0548.3",
+      "name": "AGL15",
+      "species": "",
+      "tf_class": ""
+    }
+  ],
+  "ethylene_tfs": [],
+  "nac_family": []
+}

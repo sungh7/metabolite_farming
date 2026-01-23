@@ -1,0 +1,5 @@
+pathway_id,pathway_name,embedding_score,n_enzymes_in_graph,n_metabolites_in_graph,n_enzymes_total,n_metabolites_total,normalized_embedding_score
+gmx00941,Flavonoid biosynthesis,0.4892716109752655,4,0,27,12,1.0
+gmx00940,Phenylpropanoid biosynthesis,0.0,1,0,26,11,0.0
+gmx04075,Plant hormone signal transduction,0.0,0,0,25,7,0.0
+gmx00943,Isoflavonoid biosynthesis,-0.8134523034095764,8,3,29,14,-1.6625781777694424

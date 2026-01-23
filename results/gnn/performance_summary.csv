@@ -1,0 +1,10 @@
+Model,Layers,Features,Metapath,Hits@10,Hits@20,MRR,Note
+Random Baseline,-,-,No,0.71,0.71,-,Lower bound
+Adamic-Adar,-,Topology,No,14.89,14.89,10.43,Heuristic
+HGT,2,Random,No,8.26,16.87,3.62,Baseline
+HGT,3,Random,No,8.22,18.11,5.05,+7.4%
+HGT,4,Random,No,8.73,17.45,4.35,High var.
+HGT,3,Random,Yes,5.49,14.37,3.38,Metapath ❌
+HGT,3,Proteomics,No,11.94,24.35,6.79,★ BEST +78%
+HGT,3,Combined,No,9.12,16.08,5.39,+17.9%
+Oracle,-,Reaction DB,No,97.87,97.87,-,Upper bound

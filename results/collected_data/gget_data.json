@@ -1,0 +1,407 @@
+{
+  "arabidopsis_orthologs": {
+    "AT5G13930": {
+      "name": "CHS (Chalcone synthase)",
+      "info": {
+        "ensembl_id": "AT5G13930",
+        "uniprot_id": "P13114",
+        "pdb_id": NaN,
+        "ncbi_gene_id": "831241",
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "CHS",
+        "ensembl_gene_name": "TT4",
+        "synonyms": [
+          "ATCHS",
+          "CHALCONE SYNTHASE",
+          "CHALCONE/STILBENE SYNTHASE",
+          "CHS",
+          "MAC12.28",
+          "MAC12_28",
+          "NARINGENIN-CHALCONE SYNTHASE",
+          "TRANSPARENT TESTA 4",
+          "TT4"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "Chalcone synthase",
+        "ensembl_description": "Chalcone and stilbene synthase family protein [Source:NCBI gene (formerly Entrezgene);Acc:831241]",
+        "uniprot_description": "The primary product of this enzyme is 4,2',4',6'-tetrahydroxychalcone (also termed naringenin-chalcone or chalcone) which can under specific conditions spontaneously isomerize into naringenin",
+        "ncbi_description": "Encodes chalcone synthase (CHS), a key enzyme involved in the biosynthesis of flavonoids. Required for the accumulation of purple anthocyanins in leaves and stems. Also involved in the regulation of auxin transport and the modulation of root gravitropism.",
+        "subcellular_localisation": NaN,
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT5G13930.1.",
+        "seq_region_name": "5",
+        "strand": 1,
+        "start": 4488476,
+        "end": 4490264,
+        "all_transcripts": [
+          "AT5G13930.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "TT4-201"
+        ],
+        "transcript_strands": [
+          1
+        ],
+        "transcript_starts": [
+          4488476
+        ],
+        "transcript_ends": [
+          4490264
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT3G55120": {
+      "name": "CHI (Chalcone isomerase)",
+      "info": {
+        "ensembl_id": "AT3G55120",
+        "uniprot_id": "P41088",
+        "pdb_id": NaN,
+        "ncbi_gene_id": NaN,
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "CHI1",
+        "ensembl_gene_name": "TT5",
+        "synonyms": [
+          "CFI",
+          "TT5"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "Chalcone--flavanone isomerase 1",
+        "ensembl_description": "Chalcone-flavanone isomerase family protein [Source:NCBI gene (formerly Entrezgene);Acc:824678]",
+        "uniprot_description": "Catalyzes the intramolecular cyclization of bicyclic chalcones into tricyclic (S)-flavanones. Responsible for the isomerization of 4,2',4',6'-tetrahydroxychalcone (also termed chalcone) into naringenin",
+        "ncbi_description": NaN,
+        "subcellular_localisation": NaN,
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT3G55120.1.",
+        "seq_region_name": "3",
+        "strand": -1,
+        "start": 20430059,
+        "end": 20431597,
+        "all_transcripts": [
+          "AT3G55120.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "TT5-201"
+        ],
+        "transcript_strands": [
+          -1
+        ],
+        "transcript_starts": [
+          20430059
+        ],
+        "transcript_ends": [
+          20431597
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT5G07990": {
+      "name": "F3H (Flavanone 3-hydroxylase)",
+      "info": {
+        "ensembl_id": "AT5G07990",
+        "uniprot_id": "Q9SD85",
+        "pdb_id": NaN,
+        "ncbi_gene_id": NaN,
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "CYP75B1",
+        "ensembl_gene_name": "TT7",
+        "synonyms": [
+          "F3'H",
+          "TT7"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "Flavonoid 3'-monooxygenase",
+        "ensembl_description": "Cytochrome P450 superfamily protein [Source:NCBI gene (formerly Entrezgene);Acc:830693]",
+        "uniprot_description": "Catalyzes the 3'-hydroxylation of the flavonoid B-ring to the 3',4'-hydroxylated state. Convert naringenin to eriodictyol and dihydrokaempferol to dihydroquercetin",
+        "ncbi_description": NaN,
+        "subcellular_localisation": [
+          "Endoplasmic reticulum membrane"
+        ],
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT5G07990.1.",
+        "seq_region_name": "5",
+        "strand": 1,
+        "start": 2560328,
+        "end": 2563137,
+        "all_transcripts": [
+          "AT5G07990.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "TT7-201"
+        ],
+        "transcript_strands": [
+          1
+        ],
+        "transcript_starts": [
+          2560328
+        ],
+        "transcript_ends": [
+          2563137
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT5G42650": {
+      "name": "AOS (Allene oxide synthase)",
+      "info": {
+        "ensembl_id": "AT5G42650",
+        "uniprot_id": NaN,
+        "pdb_id": NaN,
+        "ncbi_gene_id": NaN,
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": NaN,
+        "ensembl_gene_name": "AOS",
+        "synonyms": NaN,
+        "parent_gene": NaN,
+        "protein_names": NaN,
+        "ensembl_description": "allene oxide synthase [Source:NCBI gene (formerly Entrezgene);Acc:834273]",
+        "uniprot_description": NaN,
+        "ncbi_description": NaN,
+        "subcellular_localisation": NaN,
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT5G42650.1.",
+        "seq_region_name": "5",
+        "strand": -1,
+        "start": 17097564,
+        "end": 17099595,
+        "all_transcripts": [
+          "AT5G42650.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "AOS-201"
+        ],
+        "transcript_strands": [
+          -1
+        ],
+        "transcript_starts": [
+          17097564
+        ],
+        "transcript_ends": [
+          17099595
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT3G15500": {
+      "name": "NAC3",
+      "info": {
+        "ensembl_id": "AT3G15500",
+        "uniprot_id": "Q9LDY8",
+        "pdb_id": NaN,
+        "ncbi_gene_id": NaN,
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "NAC055",
+        "ensembl_gene_name": "NAC3",
+        "synonyms": [
+          "NAC3"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "NAC domain-containing protein 55",
+        "ensembl_description": "NAC domain containing protein 3 [Source:NCBI gene (formerly Entrezgene);Acc:820789]",
+        "uniprot_description": "Transcription factors that bind specifically to the 5'-CATGTG-3' motif",
+        "ncbi_description": NaN,
+        "subcellular_localisation": [
+          "Nucleus"
+        ],
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT3G15500.1.",
+        "seq_region_name": "3",
+        "strand": 1,
+        "start": 5234457,
+        "end": 5236196,
+        "all_transcripts": [
+          "AT3G15500.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "NAC3-201"
+        ],
+        "transcript_strands": [
+          1
+        ],
+        "transcript_starts": [
+          5234457
+        ],
+        "transcript_ends": [
+          5236196
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT1G01720": {
+      "name": "ATAF1 (NAC family)",
+      "info": {
+        "ensembl_id": "AT1G01720",
+        "uniprot_id": "Q39013",
+        "pdb_id": NaN,
+        "ncbi_gene_id": NaN,
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "NAC002",
+        "ensembl_gene_name": "ATAF1",
+        "synonyms": [
+          "ATAF1"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "NAC domain-containing protein 2",
+        "ensembl_description": "NAC (No Apical Meristem) domain transcriptional regulator superfamily protein [Source:NCBI gene (formerly Entrezgene);Acc:839265]",
+        "uniprot_description": "",
+        "ncbi_description": NaN,
+        "subcellular_localisation": [
+          "Nucleus"
+        ],
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT1G01720.1.",
+        "seq_region_name": "1",
+        "strand": 1,
+        "start": 267993,
+        "end": 269819,
+        "all_transcripts": [
+          "AT1G01720.1"
+        ],
+        "transcript_biotypes": [
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "ATAF1-201"
+        ],
+        "transcript_strands": [
+          1
+        ],
+        "transcript_starts": [
+          267993
+        ],
+        "transcript_ends": [
+          269819
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    },
+    "AT3G04070": {
+      "name": "NAC047",
+      "info": {
+        "ensembl_id": "AT3G04070",
+        "uniprot_id": "Q84TD6",
+        "pdb_id": NaN,
+        "ncbi_gene_id": "819562",
+        "species": "arabidopsis_thaliana",
+        "assembly_name": "TAIR10",
+        "primary_gene_name": "NAC047",
+        "ensembl_gene_name": "NAC047",
+        "synonyms": [
+          "ANAC047",
+          "NAC domain containing protein 47",
+          "NAC47",
+          "SHG",
+          "SHYG",
+          "SPEEDY HYPONASTIC GROWTH",
+          "T11I18.18",
+          "T11I18_18",
+          "anac047"
+        ],
+        "parent_gene": NaN,
+        "protein_names": "NAC transcription factor 47",
+        "ensembl_description": "NAC domain containing protein 47 [Source:NCBI gene (formerly Entrezgene);Acc:819562]",
+        "uniprot_description": "Transcription factor that binds to the promoter of ACO5, an ACC oxidase involved in ethylene biosynthesis. Mediates waterlogging-induced hyponastic leaf movement, and cell expansion in abaxial cells of the basal petiole region, by directly regulating the expression of ACO5 (PubMed:24363315). Required for normal seed development and morphology (PubMed:18849494)",
+        "ncbi_description": NaN,
+        "subcellular_localisation": [
+          "Nucleus"
+        ],
+        "object_type": "Gene",
+        "biotype": "protein_coding",
+        "canonical_transcript": "AT3G04070.1.",
+        "seq_region_name": "3",
+        "strand": -1,
+        "start": 1061300,
+        "end": 1063234,
+        "all_transcripts": [
+          "AT3G04070.1",
+          "AT3G04070.2"
+        ],
+        "transcript_biotypes": [
+          "protein_coding",
+          "protein_coding"
+        ],
+        "transcript_names": [
+          "NAC047-201",
+          "NAC047-202"
+        ],
+        "transcript_strands": [
+          -1,
+          -1
+        ],
+        "transcript_starts": [
+          1061300,
+          1061526
+        ],
+        "transcript_ends": [
+          1063234,
+          1063103
+        ],
+        "all_exons": NaN,
+        "exon_starts": NaN,
+        "exon_ends": NaN,
+        "all_translations": NaN,
+        "translation_starts": NaN,
+        "translation_ends": NaN
+      }
+    }
+  },
+  "enrichment": [],
+  "archs4_expression": {}
+}

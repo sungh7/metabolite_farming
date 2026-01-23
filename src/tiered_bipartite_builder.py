@@ -1,11 +1,31 @@
 """
-Tiered Bipartite Graph Builder
-Creates 2-tier evidence structure:
-- Tier-R: Reaction-grounded edges (KEGG reactions)
-- Tier-P: Pathway-supported edges (pathway membership)
+DEPRECATED: Tiered Bipartite Graph Builder (Simulated)
+
+This module creates 2-tier evidence structure but uses SIMULATED
+random enzyme-metabolite mappings instead of real KEGG gene-protein links.
+
+Creates:
+- Tier-R: Reaction-grounded edges (simulated)
+- Tier-P: Pathway-supported edges (simulated)
+
+For production use with real KEGG data, please use:
+    - src/data_pipeline.py (recommended)
+    - src/enhanced_bipartite_builder.py (real NCBI-STRING mapping)
+
+The simulated edges in this module may not accurately reflect
+actual biochemical relationships.
 """
 
+import warnings
 import torch
+
+# Issue deprecation warning on import
+warnings.warn(
+    "tiered_bipartite_builder.py is deprecated. It uses simulated mappings. "
+    "Use data_pipeline.py or enhanced_bipartite_builder.py for real KEGG data.",
+    DeprecationWarning,
+    stacklevel=2
+)
 import torch_geometric.transforms as T
 from torch_geometric.data import HeteroData
 import pandas as pd

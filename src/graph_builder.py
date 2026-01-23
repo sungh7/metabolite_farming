@@ -104,11 +104,7 @@ def build_graph(threshold=700, strict=False):
         
     # 3. Create HeteroData
     data = HeteroData()
-    data.num_nodes_dict = type_counts # Metadata
-    
-    # 3. Create HeteroData
-    data = HeteroData()
-    data.num_nodes_dict = type_counts # Metadata
+    data.num_nodes_dict = type_counts  # Metadata
     
     # Add Nodes
     for ntype, count in type_counts.items():

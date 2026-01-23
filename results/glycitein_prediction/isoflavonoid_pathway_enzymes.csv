@@ -1,0 +1,31 @@
+step,reaction,enzyme_class,rank,uniprot,name,gnn_score,combined_score,log2fc,pvalue,significant
+1,Phenylalanine → Cinnamic acid,PAL,1,I1NHH9,I1NHH9_SOYBN,0.9019,0.9019,,,False
+1,Phenylalanine → Cinnamic acid,PAL,2,K7K183,K7K183_SOYBN,0.8583,0.8583,0.1354,0.781787,False
+1,Phenylalanine → Cinnamic acid,PAL,3,I1KME9,I1KME9_SOYBN,0.8178,0.8178,,,False
+1,Phenylalanine → Cinnamic acid,PAL,4,I1JE91,I1JE91_SOYBN,0.722,0.722,,,False
+1,Phenylalanine → Cinnamic acid,PAL,5,I1JRH4,I1JRH4_SOYBN,0.7004,0.7004,,,False
+2,Cinnamic acid → p-Coumaric acid,C4H,,,No C4H candidates found,,,,,
+3,p-Coumaric acid → p-Coumaroyl-CoA,4CL,1,I1MSS3,4CL1,0.5502,0.5502,,,False
+3,p-Coumaric acid → p-Coumaroyl-CoA,4CL,2,P31686,4CL1_SOYBN,0.5501,0.5501,,,False
+3,p-Coumaric acid → p-Coumaroyl-CoA,4CL,3,H2BER4,4CL,0.5471,0.5471,-1.4065,0.109472,False
+3,p-Coumaric acid → p-Coumaroyl-CoA,4CL,4,P31687,4CL4,0.4605,0.4605,,,False
+3,p-Coumaric acid → p-Coumaroyl-CoA,4CL,5,Q8S5C1,4CL2,0.2449,0.2449,,,False
+4,p-Coumaroyl-CoA + 3 Malonyl-CoA → Naringenin chalcone,CHS,1,I1LG10,CHS8,0.5817,0.5817,3.9306,0.060613,False
+4,p-Coumaroyl-CoA + 3 Malonyl-CoA → Naringenin chalcone,CHS,2,A0A0R4J3D3,CHS2-2,0.55,0.55,,,False
+4,p-Coumaroyl-CoA + 3 Malonyl-CoA → Naringenin chalcone,CHS,3,B3F5J6,CHS9,0.5497,0.5497,,,False
+4,p-Coumaroyl-CoA + 3 Malonyl-CoA → Naringenin chalcone,CHS,4,Q6X0M9,CHS3-2,0.5497,0.5497,,,False
+4,p-Coumaroyl-CoA + 3 Malonyl-CoA → Naringenin chalcone,CHS,5,I1JER5,I1JER5_SOYBN,0.5496,0.5496,,,False
+5,Naringenin chalcone → Naringenin / Liquiritigenin,CHI,1,I1LFF1,CHI1B2-2,0.532,1.5473,5.0765,0.047066,True
+5,Naringenin chalcone → Naringenin / Liquiritigenin,CHI,2,Q9SDY6,Chia1,0.5883,1.3338,3.7275,0.006483,True
+5,Naringenin chalcone → Naringenin / Liquiritigenin,CHI,3,K7K183,K7K183_SOYBN,0.8583,0.8583,0.1354,0.781787,False
+5,Naringenin chalcone → Naringenin / Liquiritigenin,CHI,4,A0A0R0H0T7,A0A0R0H0T7,0.5546,0.8323,-1.3886,0.032014,True
+5,Naringenin chalcone → Naringenin / Liquiritigenin,CHI,5,I1MIX4,GMCHI3A2,0.556,0.7593,-1.0163,0.017358,True
+6,Naringenin/Liquiritigenin → Genistein/Daidzein,IFS,1,Q9M6D6,ifs1,0.5004,1.145,3.2231,0.005753,True
+6,Naringenin/Liquiritigenin → Genistein/Daidzein,IFS,2,A0A0R0IFS4,A0A0R0IFS4,0.5502,0.5502,,,False
+6,Naringenin/Liquiritigenin → Genistein/Daidzein,IFS,3,A0A0R0IFS8,A0A0R0IFS8,0.5502,0.5502,,,False
+6,Naringenin/Liquiritigenin → Genistein/Daidzein,IFS,4,Q9SWR5,IFS2,0.4831,0.4831,,,False
+7,2-Hydroxyisoflavanone → Isoflavone (dehydration),HID,1,Q5NUF3,HIDH,0.6297,0.6297,,,False
+7,2-Hydroxyisoflavanone → Isoflavone (dehydration),HID,2,A0A0R0HID3,A0A0R0HID3,0.5505,0.5505,,,False
+7,2-Hydroxyisoflavanone → Isoflavone (dehydration),HID,3,A0A0R0HID7,A0A0R0HID7,0.5504,0.5504,,,False
+7,2-Hydroxyisoflavanone → Isoflavone (dehydration),HID,4,A0A0R0HID0,A0A0R0HID0,0.5503,0.5503,,,False
+7,2-Hydroxyisoflavanone → Isoflavone (dehydration),HID,5,A0A0R0HID4,A0A0R0HID4,0.5502,0.5502,,,False

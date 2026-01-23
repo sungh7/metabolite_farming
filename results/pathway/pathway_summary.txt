@@ -1,0 +1,51 @@
+======================================================================
+ISOFLAVONOID BIOSYNTHESIS PATHWAY REPORT
+Generated: 2026-01-22 14:54:56
+======================================================================
+
+Target Metabolite: Daidzein
+Pathway: Isoflavonoid Biosynthesis
+Description: Phenylalanine → Isoflavonoids (Daidzein, Genistein, etc.)
+
+======================================================================
+BIOSYNTHETIC FLOW
+======================================================================
+
+L-Phenylalanine
+  ↓ [PAL: PAL1 (P27991)]
+trans-Cinnamic acid
+  ↓ [C4H: ?]
+p-Coumaric acid
+  ↓ [4CL: 4CL2 (Q8S5C1)]
+p-Coumaroyl-CoA
+  ↓ [CHS: PROPEP890 (K7LFJ0)]
+Naringenin chalcone
+  ↓ [CHI: CHI1B2-2 (I1LFF1)] ★★ (Log2FC=+5.08, p<0.05)
+Liquiritigenin
+  ↓ [IFS: ifs1 (Q9M6D6)] ★★ (Log2FC=+3.22, p<0.05)
+2-Hydroxyisoflavanone
+  ↓ [HID: A0A0R0HID4 (A0A0R0HID4)]
+Daidzein
+
+======================================================================
+REGULATORY TRANSCRIPTION FACTORS
+======================================================================
+
+Total TFs connected to pathway enzymes: 2
+
+No significantly changed TFs with proteomics data
+
+Top connected TFs:
+  1. I1KWF7 (I1KWF7) - 2 enzyme connections
+  2. A0A0R0GPT0 (A0A0R0GPT0) - 1 enzyme connections
+
+======================================================================
+KEY FINDINGS
+======================================================================
+
+• 2/6 pathway enzymes significantly regulated by ethylene
+• CHI (CHI1B2-2) shows strongest induction: 34× fold change
+
+======================================================================
+END OF REPORT
+======================================================================

@@ -1,0 +1,59 @@
+======================================================================
+ISOFLAVONOID BIOSYNTHESIS PATHWAY REPORT
+Generated: 2026-01-22 15:25:02
+======================================================================
+
+Target Metabolite: Daidzein
+Pathway: Isoflavonoid Biosynthesis
+Description: Phenylalanine → Isoflavonoids (Daidzein, Genistein, etc.)
+
+======================================================================
+BIOSYNTHETIC FLOW
+======================================================================
+
+L-Phenylalanine
+  ↓ [PAL: I1NHH9_SOYBN (I1NHH9)]
+trans-Cinnamic acid
+  ↓ [C4H: ?]
+p-Coumaric acid
+  ↓ [4CL: 4CL (H2BER4)]
+p-Coumaroyl-CoA
+  ↓ [CHS: PROPEP914 (K7LSB9)]
+Naringenin chalcone
+  ↓ [CHI: CHI1B2-2 (I1LFF1)] ★★ (Log2FC=+5.08, p<0.05)
+Liquiritigenin
+  ↓ [IFS: ifs1 (Q9M6D6)] ★★ (Log2FC=+3.22, p<0.05)
+2-Hydroxyisoflavanone
+  ↓ [HID: HIDH (Q5NUF3)]
+Daidzein
+
+======================================================================
+REGULATORY TRANSCRIPTION FACTORS
+======================================================================
+
+Total TFs connected to pathway enzymes: 15
+
+No significantly changed TFs with proteomics data
+
+Top connected TFs:
+  1. I1KWF7 (I1KWF7) - 3 enzyme connections
+  2. A0A0R0GPT0 (A0A0R0GPT0) - 3 enzyme connections
+  3. A0A0R0EQI8 (A0A0R0EQI8) - 1 enzyme connections
+  4. C6TDI4 (C6TDI4) - 1 enzyme connections
+  5. C6TEX3 (C6TEX3) - 1 enzyme connections
+  6. I1KWG9 (I1KWG9) - 1 enzyme connections
+  7. I1L2A6 (I1L2A6) - 1 enzyme connections
+  8. I1L2A8 (I1L2A8) - 1 enzyme connections
+  9. I1LC13 (I1LC13) - 1 enzyme connections
+  10. I1LC14 (I1LC14) - 1 enzyme connections
+
+======================================================================
+KEY FINDINGS
+======================================================================
+
+• 2/6 pathway enzymes significantly regulated by ethylene
+• CHI (CHI1B2-2) shows strongest induction: 34× fold change
+
+======================================================================
+END OF REPORT
+======================================================================

@@ -1,0 +1,11 @@
+Model	Layers	Features	Metapath	Split	Hits@10	Hits@20	MRR	Notes
+RANDOM	-	-	-	test	0.71%	0.71%	-	Random baseline
+Adamic-Adar	-	Topology	-	test	14.89%	14.89%	0.1043	Heuristic
+HGT	2	Random	No	test	8.26%	16.87%	0.0362	Baseline (2-layer)
+HGT	3	Random	No	test	8.22%	18.11%	0.0505	+7.4% vs 2L
+HGT	4	Random	No	test	8.73%	17.45%	0.0435	High variance
+HGT	2	Random	Yes	test	6.04%	12.75%	0.0324	Metapath hurts
+HGT	3	Random	Yes	test	5.49%	14.37%	0.0338	Metapath hurts
+HGT	3	Proteomics	No	test	11.94%	24.35%	0.0679	+78.5% vs Random, BEST
+HGT	3	Combined	No	test	9.12%	16.08%	0.0539	Random dilutes signal
+Direct-Reaction	-	Oracle	-	test	97.87%	97.87%	-	Upper bound

@@ -1,0 +1,266 @@
+{
+  "analysis_date": "2026-01-22T08:05:55.341726",
+  "summary": {
+    "n_pathways_analyzed": 0,
+    "top_pathway": {
+      "id": "gmx00943",
+      "name": "Isoflavonoid biosynthesis",
+      "score": 1.0
+    },
+    "method": "FC correlation-based pathway activation scoring"
+  },
+  "pathway_rankings": [
+    {
+      "pathway_id": "gmx00943",
+      "pathway_name": "Isoflavonoid biosynthesis",
+      "activation_score": 19.76620581958776,
+      "normalized_score": 1.0,
+      "metabolite_fc": 1.1280716798337433,
+      "enzyme_fc": 4.0718394842316,
+      "metabolite_coverage": 0.21428571428571427,
+      "enzyme_coverage": 0.1724137931034483,
+      "n_metabolites": 3,
+      "n_enzymes": 5
+    },
+    {
+      "pathway_id": "gmx00941",
+      "pathway_name": "Flavonoid biosynthesis",
+      "activation_score": 1.4526785952018766,
+      "normalized_score": 0.0734930420365406,
+      "metabolite_fc": 0.0,
+      "enzyme_fc": 3.631696488004691,
+      "metabolite_coverage": 0.0,
+      "enzyme_coverage": 0.14814814814814814,
+      "n_metabolites": 0,
+      "n_enzymes": 4
+    },
+    {
+      "pathway_id": "gmx00940",
+      "pathway_name": "Phenylpropanoid biosynthesis",
+      "activation_score": 0.4164425500069404,
+      "normalized_score": 0.021068411095580997,
+      "metabolite_fc": 0.0,
+      "enzyme_fc": 0.8328851000138808,
+      "metabolite_coverage": 0.0,
+      "enzyme_coverage": 0.19230769230769232,
+      "n_metabolites": 0,
+      "n_enzymes": 5
+    },
+    {
+      "pathway_id": "gmx04075",
+      "pathway_name": "Plant hormone signal transduction",
+      "activation_score": 0.013756599474619319,
+      "normalized_score": 0.0006959656091907589,
+      "metabolite_fc": -0.0343914986865483,
+      "enzyme_fc": 0.0,
+      "metabolite_coverage": 0.14285714285714285,
+      "enzyme_coverage": 0.0,
+      "n_metabolites": 1,
+      "n_enzymes": 0
+    }
+  ],
+  "top_proteins_by_pathway": {
+    "gmx00940": [
+      {
+        "uniprot_id": "A0A0R0KSM2",
+        "string_id": "3847.A0A0R0KSM2",
+        "log2fc": 1.7901614189395074,
+        "p_value": 0.0258469247087667,
+        "contribution_score": 2.8420443761192455,
+        "enzyme_name": "CAD",
+        "enzyme_full_name": "Cinnamyl alcohol dehydrogenase",
+        "ec_number": "1.1.1.195",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 1.0
+      },
+      {
+        "uniprot_id": "I1MNR6",
+        "string_id": "3847.I1MNR6",
+        "log2fc": -0.6096618742272412,
+        "p_value": 0.2467435511259176,
+        "contribution_score": 0.370524558059278,
+        "enzyme_name": "CCR",
+        "enzyme_full_name": "Cinnamoyl-CoA reductase",
+        "ec_number": "1.2.1.44",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.13037254490910583
+      },
+      {
+        "uniprot_id": "A0A0R4J4D2",
+        "string_id": "3847.A0A0R4J4D2",
+        "log2fc": -0.1952178139063523,
+        "p_value": 0.4609157574132893,
+        "contribution_score": 0.06566706454437844,
+        "enzyme_name": "HCT",
+        "enzyme_full_name": "Hydroxycinnamoyl-CoA transferase",
+        "ec_number": "2.3.1.133",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.023105573261331513
+      },
+      {
+        "uniprot_id": "C6SVC4",
+        "string_id": "3847.C6SVC4",
+        "log2fc": -0.1008456864780192,
+        "p_value": 0.5380825320528215,
+        "contribution_score": 0.027142728087880593,
+        "enzyme_name": "COMT",
+        "enzyme_full_name": "Caffeic acid O-methyltransferase",
+        "ec_number": "2.1.1.68",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.009550423742835235
+      },
+      {
+        "uniprot_id": "I1MG66",
+        "string_id": "3847.I1MG66",
+        "log2fc": 0.2602862232292777,
+        "p_value": 0.831445492296142,
+        "contribution_score": 0.020866161823462175,
+        "enzyme_name": "CCoAOMT",
+        "enzyme_full_name": "Caffeoyl-CoA O-methyltransferase",
+        "ec_number": "2.1.1.104",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.007341954966922261
+      }
+    ],
+    "gmx00941": [
+      {
+        "uniprot_id": "C6TNS8",
+        "string_id": "3847.C6TNS8",
+        "log2fc": 7.195791773409317,
+        "p_value": 0.0032862536496192,
+        "contribution_score": 17.8693019291644,
+        "enzyme_name": "F3H",
+        "enzyme_full_name": "Flavanone 3-hydroxylase",
+        "ec_number": "1.14.11.9",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 1.0
+      },
+      {
+        "uniprot_id": "I1KM16",
+        "string_id": "3847.I1KM16",
+        "log2fc": 1.343576767108618,
+        "p_value": 0.004983118890567,
+        "contribution_score": 3.0935838281651207,
+        "enzyme_name": "DFR",
+        "enzyme_full_name": "Dihydroflavonol 4-reductase",
+        "ec_number": "1.1.1.219",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.17312281366269253
+      },
+      {
+        "uniprot_id": "I1MNR6",
+        "string_id": "3847.I1MNR6",
+        "log2fc": -0.6096618742272412,
+        "p_value": 0.2467435511259176,
+        "contribution_score": 0.370524558059278,
+        "enzyme_name": "CCR",
+        "enzyme_full_name": "Cinnamoyl-CoA reductase",
+        "ec_number": "1.2.1.44",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.020735256448633096
+      },
+      {
+        "uniprot_id": "C6SVC4",
+        "string_id": "3847.C6SVC4",
+        "log2fc": -0.1008456864780192,
+        "p_value": 0.5380825320528215,
+        "contribution_score": 0.027142728087880593,
+        "enzyme_name": "COMT",
+        "enzyme_full_name": "Caffeic acid O-methyltransferase",
+        "ec_number": "2.1.1.68",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.0015189585018752791
+      }
+    ],
+    "gmx00943": [
+      {
+        "uniprot_id": "I1M622",
+        "string_id": "3847.I1M622",
+        "log2fc": 6.385814585796148,
+        "p_value": 0.0373160733188871,
+        "contribution_score": 9.11960775100944,
+        "enzyme_name": "IFS2",
+        "enzyme_full_name": "Isoflavone synthase 2",
+        "ec_number": "1.14.14.87",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 1.0
+      },
+      {
+        "uniprot_id": "Q9M6D6",
+        "string_id": "3847.Q9M6D6",
+        "log2fc": 3.223130176252291,
+        "p_value": 0.0057534402376181,
+        "contribution_score": 7.2200449290243895,
+        "enzyme_name": "IFS",
+        "enzyme_full_name": "Isoflavone synthase",
+        "ec_number": "1.14.14.87",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.7917056441627339
+      },
+      {
+        "uniprot_id": "A7BIC9",
+        "string_id": "3847.A7BIC9",
+        "log2fc": 1.944862990914992,
+        "p_value": 0.0014009289406406,
+        "contribution_score": 5.549829704747443,
+        "enzyme_name": "CYP81E",
+        "enzyme_full_name": "Cytochrome P450 81E subfamily",
+        "ec_number": "1.14.-.-",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.6085601328777698
+      },
+      {
+        "uniprot_id": "I1JNN8",
+        "string_id": "3847.I1JNN8",
+        "log2fc": 8.45030851584821,
+        "p_value": 0.2471942466734107,
+        "contribution_score": 5.129013127620178,
+        "enzyme_name": "UGT",
+        "enzyme_full_name": "UDP-glycosyltransferase",
+        "ec_number": "2.4.1.-",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.5624159796842636
+      },
+      {
+        "uniprot_id": "C6TDP1",
+        "string_id": "3847.C6TDP1",
+        "log2fc": 6.799917351308539,
+        "p_value": 0.1835529740167086,
+        "contribution_score": 5.006361457088084,
+        "enzyme_name": "OMT",
+        "enzyme_full_name": "O-methyltransferase",
+        "ec_number": "2.1.1.-",
+        "gene_names": "",
+        "protein_names": "",
+        "centrality": 1.0,
+        "normalized_contribution": 0.5489667531516292
+      }
+    ]
+  }
+}

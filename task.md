@@ -48,3 +48,8 @@
     - [x] Document "MaxQuant/LFQ" details in Reproducibility.
     - [x] Create Supplementary Table for IFS/IFR/CHI evidence.
     - [x] Finalize `walkthrough.md` with all defensive edits.
+
+- [x] **Phase 9: Alternative Time-Series Dataset Search** (Completed - No suitable matches)
+    - [x] Search SoyMetDB and MetaboLights for soybean time-series datasets.
+    - [x] Download and inspect candidate datasets (MTBLS9424 rejected).
+    - [x] Feasibility assessment: Decided to proceed with MTBLS531 only.

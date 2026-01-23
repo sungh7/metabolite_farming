@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "total_proteins": 5583,
+    "de_proteins_up": 779,
+    "de_proteins_down": 727,
+    "total_candidates": 20,
+    "isoflavonoid_related_candidates": 8,
+    "candidates_with_tf_motifs": 0
+  },
+  "pathway_enrichment": {
+    "methylation": 10,
+    "signaling": 10,
+    "isoflavonoid_biosynthesis": 5,
+    "glycosylation": 3
+  },
+  "tf_analysis": {
+    "tf_family_distribution": {
+      "ERF/AP2": 20
+    },
+    "motif_coverage": 0.0
+  },
+  "recommendations": [
+    "1. 8 candidates directly related to isoflavonoid biosynthesis",
+    "2. 0 candidates have TF motif data available in JASPAR",
+    "3. Priority targets for promoter motif analysis: NAC and MYB family TFs",
+    "4. Consider downloading GSE112584 for NAC-glyceollin temporal data",
+    "5. Use KEGG pathway genes for functional validation"
+  ]
+}

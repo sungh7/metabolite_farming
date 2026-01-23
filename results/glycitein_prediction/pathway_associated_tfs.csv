@@ -1,0 +1,16 @@
+tf_uniprot,tf_name,connected_enzymes,connection_count,log2fc,pvalue,significant
+I1KWF7,I1KWF7,3,3,,,False
+A0A0R0GPT0,A0A0R0GPT0,3,3,,,False
+A0A0R0EQI8,A0A0R0EQI8,1,1,,,False
+C6TDI4,C6TDI4,1,1,,,False
+C6TEX3,C6TEX3,1,1,,,False
+I1KWG9,I1KWG9,1,1,,,False
+I1L2A6,I1L2A6,1,1,,,False
+I1L2A8,I1L2A8,1,1,,,False
+I1LC13,I1LC13,1,1,,,False
+I1LC14,I1LC14,1,1,,,False
+I1LC15,I1LC15,1,1,,,False
+I1N4K6,I1N4K6,1,1,,,False
+I1NID5,I1NID5,1,1,,,False
+I1NID6,I1NID6,1,1,,,False
+K7MUZ8,K7MUZ8,1,1,,,False

@@ -1,0 +1,238 @@
+{
+  "geo_datasets": [
+    {
+      "id": "200292049",
+      "accession": "GSE292049",
+      "title": "Phloem-Specific Translational Regulation of Soybean Nodulation",
+      "gpl": "22410",
+      "samples": 12,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200240965",
+      "accession": "GSE240965",
+      "title": "Transcriptomic and epigenetic responses unveil resistance mechanisms to Phytophthora sansomeana in soybean [WGBS]",
+      "gpl": "28801",
+      "samples": 16,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200240964",
+      "accession": "GSE240964",
+      "title": "Transcriptomic and epigenetic responses unveil resistance mechanisms to Phytophthora sansomeana in soybean [RNA-seq]",
+      "gpl": "21998;28801",
+      "samples": 64,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200066861",
+      "accession": "GSE66861",
+      "title": "Transcriptome profiles in compatible and incompatible interactions between soybean and Fusarium oxysporum",
+      "gpl": "19246",
+      "samples": 18,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200064492",
+      "accession": "GSE64492",
+      "title": "Whole-genome gene expression profiling revealed genes and pathways potentially involved in regulating interactions of soybean with cyst nematode (Hete",
+      "gpl": "13674",
+      "samples": 42,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200012286",
+      "accession": "GSE12286",
+      "title": "Genomic Expression Profiling of Mature Soybean (Glycine max) Pollen",
+      "gpl": "4592",
+      "samples": 5,
+      "query": "\"Glycine max\"[Organism] AND ethylene AND"
+    },
+    {
+      "id": "200313134",
+      "accession": "GSE313134",
+      "title": "Transcriptomic and Metabolic Insight into Flavonoid Biosynthesis Underlying Seed Coat Color Variation in Soybean (Glycine max)",
+      "gpl": "15008",
+      "samples": 2,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "200112584",
+      "accession": "GSE112584",
+      "title": "Identification of a NAC Transcription Factor for the Elicitation of Glyceollin Biosynthesis in Soybean Reveals a Conserved Phytoalexin Regulatory Path",
+      "gpl": "24802",
+      "samples": 12,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "200018517",
+      "accession": "GSE18517",
+      "title": "Gene expression profiling in Al-tolerant and Al-sensitive soybean under aluminum stress",
+      "gpl": "4592",
+      "samples": 44,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "200004194",
+      "accession": "GSE4194",
+      "title": "Soybean cultivars RCAT-Angora & Harovinton, embryo comparison and development",
+      "gpl": "3015",
+      "samples": 42,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "300094976",
+      "accession": "GSM94976",
+      "title": "#149325 Soybean embryo, RCAT-Angora & Harovinton, Delhi 2003 time course",
+      "gpl": "3015",
+      "samples": 0,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "300094975",
+      "accession": "GSM94975",
+      "title": "#149324 Soybean embryo, RCAT-Angora & Harovinton, Delhi 2003 time course",
+      "gpl": "3015",
+      "samples": 0,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "300094974",
+      "accession": "GSM94974",
+      "title": "#150552 Soybean embryo, RCAT-Angora & Harovinton, Delhi 2003 time course",
+      "gpl": "3015",
+      "samples": 0,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "300094973",
+      "accession": "GSM94973",
+      "title": "#150551 Soybean embryo, RCAT-Angora & Harovinton, Delhi 2003 time course",
+      "gpl": "3015",
+      "samples": 0,
+      "query": "\"Glycine max\"[Organism] AND isoflavon*"
+    },
+    {
+      "id": "200313134",
+      "accession": "GSE313134",
+      "title": "Transcriptomic and Metabolic Insight into Flavonoid Biosynthesis Underlying Seed Coat Color Variation in Soybean (Glycine max)",
+      "gpl": "15008",
+      "samples": 2,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200189036",
+      "accession": "GSE189036",
+      "title": "Transcriptomic analysis reveals the importance of Protein Phosphatase 2 regulating the growth of soybean roots",
+      "gpl": "24376",
+      "samples": 4,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200240964",
+      "accession": "GSE240964",
+      "title": "Transcriptomic and epigenetic responses unveil resistance mechanisms to Phytophthora sansomeana in soybean [RNA-seq]",
+      "gpl": "21998;28801",
+      "samples": 64,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200221901",
+      "accession": "GSE221901",
+      "title": "RNA-seq dissects incomplete activation of glyceollin biosynthesis by soybean transcription factors GmMYB29A2 and GmNAC42-1",
+      "gpl": "24802",
+      "samples": 9,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200131686",
+      "accession": "GSE131686",
+      "title": "Glyceollin transcription factor GmMYB29A2 is a regulator of soybean resistance to Phytophthora sojae",
+      "gpl": "24802",
+      "samples": 16,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200111799",
+      "accession": "GSE111799",
+      "title": "Transcriptomic study of soybean (Glycine max) in response to zinc deficiency",
+      "gpl": "15008",
+      "samples": 8,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200104286",
+      "accession": "GSE104286",
+      "title": "Transcriptomic study of soybean (Glycine max) leaves in response to short-term phosphorus deficiency",
+      "gpl": "15008",
+      "samples": 4,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    },
+    {
+      "id": "200066861",
+      "accession": "GSE66861",
+      "title": "Transcriptome profiles in compatible and incompatible interactions between soybean and Fusarium oxysporum",
+      "gpl": "19246",
+      "samples": 18,
+      "query": "\"Glycine max\"[Organism] AND transcriptio"
+    }
+  ],
+  "sra_experiments": [
+    {
+      "uid": "37592142"
+    },
+    {
+      "uid": "37592141"
+    },
+    {
+      "uid": "37592140"
+    },
+    {
+      "uid": "37592139"
+    },
+    {
+      "uid": "37592138"
+    },
+    {
+      "uid": "37592137"
+    },
+    {
+      "uid": "37592136"
+    },
+    {
+      "uid": "37592135"
+    },
+    {
+      "uid": "37592134"
+    },
+    {
+      "uid": "37592133"
+    }
+  ],
+  "promoter_sequences": [
+    {
+      "gene": "IFS1",
+      "accession": "NM_001251586",
+      "title": "Glycine max 2-hydroxyisoflavanone synthase (IFS2), mRNA",
+      "length": 1958
+    },
+    {
+      "gene": "IFS2",
+      "accession": "NM_001251586",
+      "title": "Glycine max 2-hydroxyisoflavanone synthase (IFS2), mRNA",
+      "length": 1958
+    },
+    {
+      "gene": "CHI",
+      "accession": "NM_001249839",
+      "title": "Glycine max chalcone--flavonone isomerase 2-A (CHI2-A), mRNA",
+      "length": 920
+    },
+    {
+      "gene": "CHS",
+      "accession": "NM_001289367",
+      "title": "Glycine max chalcone synthase 3 (CHS3), mRNA",
+      "length": 1167
+    }
+  ]
+}
