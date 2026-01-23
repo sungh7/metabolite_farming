@@ -168,7 +168,9 @@ V3_CONFIG = {
     # --- Edge Types ---
     # Layer 1: All edge types for local context
     'layer1_edge_types': [
-        ('Enzyme', 'ppi', 'Enzyme'),
+        ('Enzyme', 'interacts', 'Enzyme'),
+        ('Enzyme', 'interacts', 'Protein'),
+        ('Protein', 'interacts', 'Enzyme'),
         ('Enzyme', 'catalyzes_R', 'Metabolite'),
         ('Metabolite', 'rev_catalyzes_R', 'Enzyme'),
         ('Metabolite', 'rxn_neighbor', 'Metabolite'),
@@ -178,7 +180,9 @@ V3_CONFIG = {
     # Layer 2+: Only strong relationships (exclude weak associations)
     # Rationale: rxn_neighbor/TF are weak associations; multi-hop propagation causes noise
     'layer2_edge_types': [
-        ('Enzyme', 'ppi', 'Enzyme'),
+        ('Enzyme', 'interacts', 'Enzyme'),
+        ('Enzyme', 'interacts', 'Protein'),
+        ('Protein', 'interacts', 'Enzyme'),
         ('Enzyme', 'catalyzes_R', 'Metabolite'),
         ('Metabolite', 'rev_catalyzes_R', 'Enzyme'),
     ],
